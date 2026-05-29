@@ -36,5 +36,12 @@ export async function getInventoryItems(): Promise<InventoryItem[]> {
             incoming: 0,
             allocated: 0,
         },
+        {
+            sku: "EZ200",
+            description: "Example second finished good",
+            onHand: 0,
+            incoming: 0,
+            allocated: 0,
+        },
     ];
 }

@@ -15,8 +15,9 @@ export default async function ShortagesPage() {
           <thead className="bg-slate-900 text-slate-300">
             <tr>
               <th className="p-4">SKU</th>
-              <th className="p-4 text-right">Required</th>
+              <th className="p-4 text-right">Gross Required</th>
               <th className="p-4 text-right">Available</th>
+              <th className="p-4 text-right">Net Required</th>
               <th className="p-4 text-right">Shortage</th>
             </tr>
           </thead>
@@ -27,6 +28,7 @@ export default async function ShortagesPage() {
                 <td className="p-4 font-mono">{item.sku}</td>
                 <td className="p-4 text-right">{item.required}</td>
                 <td className="p-4 text-right">{item.available}</td>
+                <td className="p-4 text-right">{item.netRequired}</td>
                 <td className="p-4 text-right font-semibold">
                   {item.shortage}
                 </td>

@@ -9,5 +9,9 @@ export async function getDemandItems(): Promise<DemandItem[]> {
       sku: "EZ100",
       quantity: 100,
     },
+    {
+        sku: "EZ200",
+        quantity: 50,
+    },
   ];
 }
