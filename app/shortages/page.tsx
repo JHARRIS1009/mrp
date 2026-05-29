@@ -1,4 +1,5 @@
 import { calculateShortages } from "@/lib/mrp";
+import Link from "next/link";
 
 export default async function ShortagesPage() {
   const shortages = await calculateShortages();
@@ -25,7 +26,11 @@ export default async function ShortagesPage() {
           <tbody>
             {shortages.map((item) => (
               <tr key={item.sku} className="border-t border-slate-800">
-                <td className="p-4 font-mono">{item.sku}</td>
+                <td className="p-4 font-mono">
+                    <Link href={`/shortages/${encodeURIComponent(item.sku)}`} className="hover:underline">
+                        {item.sku}
+                    </Link>
+                </td>
                 <td className="p-4 text-right">{item.required}</td>
                 <td className="p-4 text-right">{item.available}</td>
                 <td className="p-4 text-right">{item.netRequired}</td>
