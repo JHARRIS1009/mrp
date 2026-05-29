@@ -1,4 +1,4 @@
-import { getInventoryItems } from "@/lib/inventory";
+import { getInventoryItems } from "@/lib/inventory-data";
 
 export default async function InventoryPage() {
     const inventoryItems = await getInventoryItems();

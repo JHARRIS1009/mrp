@@ -11,5 +11,17 @@ export async function getBomLines(): Promise<BomLine[]> {
             childSku: "EZ1.1",
             qtyPer: 1,
         },
+
+        {
+            parentSku: "EZ100",
+            childSku: "BOLT-001",
+            qtyPer: 2,
+        },
+
+        {
+            parentSku: "EZ1.1",
+            childSku: "BEARING",
+            qtyPer: 4,
+        },
     ];
 }

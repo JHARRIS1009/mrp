@@ -22,5 +22,19 @@ export async function getInventoryItems(): Promise<InventoryItem[]> {
             incoming: 0,
             allocated: 0,
         },
+        {
+            sku: "BOLT-001",
+            description: "Example bolt",
+            onHand: 50,
+            incoming: 0,
+            allocated: 0,
+        },
+        {
+            sku: "BEARING",
+            description: "Example bearing",
+            onHand: 1000,
+            incoming: 0,
+            allocated: 0,
+        },
     ];
 }
