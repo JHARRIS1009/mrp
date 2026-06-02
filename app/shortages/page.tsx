@@ -1,11 +1,12 @@
 import { calculateShortages } from "@/lib/mrp";
 import Link from "next/link";
+import NavBar from "@/components/NavBar";
 
 export default async function ShortagesPage() {
   const shortages = await calculateShortages();
 
   return (
-    <main className="min-h-screen bg-slate-950 p-8 text-white">
+    <section>
       <h1 className="text-3xl font-bold">Shortages</h1>
       <p className="mt-2 text-slate-300">
         Component shortages based on demand, BOM, and physical inventory.
@@ -42,6 +43,6 @@ export default async function ShortagesPage() {
           </tbody>
         </table>
       </div>
-    </main>
+    </section>
   );
 }

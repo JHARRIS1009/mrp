@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { calculateShortageTrace } from "@/lib/mrp";
+import NavBar from "@/components/NavBar";
 
 export default async function ShortageDetailPage({
   params,
@@ -47,7 +48,7 @@ export default async function ShortageDetailPage({
   const demandSourceCount = traces.length;
 
   return (
-    <main className="min-h-screen bg-slate-950 p-8 text-white">
+    <section>
       <Link href="/shortages" className="text-sm text-slate-300 hover:text-white">
         ← Back to Shortages
       </Link>
@@ -139,6 +140,6 @@ export default async function ShortageDetailPage({
           </tbody>
         </table>
       </div>
-    </main>
+    </section>
   );
 }

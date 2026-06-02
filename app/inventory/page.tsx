@@ -1,10 +1,11 @@
 import { getInventoryItems } from "@/lib/inventory-data";
+import NavBar from "@/components/NavBar";
 
 export default async function InventoryPage() {
     const inventoryItems = await getInventoryItems();
 
     return (
-        <main className="min-h-screen bg-slate-950 p-8 text-white">
+        <section>
             <h1 className="text-3xl font-bold">Inventory</h1>
             <p className="mt-2 text-slate-300">
                 Physical inventory, incoming inventory, and allocated inventory.
@@ -40,6 +41,6 @@ export default async function InventoryPage() {
                     </tbody>
                 </table>
             </div>
-        </main>
+        </section>
     );
 }

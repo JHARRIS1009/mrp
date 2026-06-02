@@ -1,10 +1,11 @@
 import { getDemandItems } from "@/lib/demand-data";
+import NavBar from "@/components/NavBar";
 
 export default async function DemandPage() {
   const demandItems = await getDemandItems();
 
   return (
-    <main className="min-h-screen bg-slate-950 p-8 text-white">
+    <section>
       <h1 className="text-3xl font-bold">Demand</h1>
       <p className="mt-2 text-slate-300">
         Open demand that drives the MRP shortage calculation.
@@ -35,6 +36,6 @@ export default async function DemandPage() {
           </tbody>
         </table>
       </div>
-    </main>
+    </section>
   );
 }

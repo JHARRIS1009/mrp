@@ -1,10 +1,11 @@
 import { calculateCanBuild } from "@/lib/can-build";
+import NavBar from "@/components/NavBar";
 
 export default async function CanBuildPage() {
   const results = await calculateCanBuild();
     
   return (
-    <main className="min-h-screen bg-slate-950 p-8 text-white">
+    <section>
       <h1 className="text-3xl font-bold">Can Build</h1>
       <p className="mt-2 text-slate-300">
         Estimated buildable inventory based on physical on-hand components.
@@ -38,6 +39,6 @@ export default async function CanBuildPage() {
           </tbody>
         </table>
       </div>
-    </main>
+    </section>
   );
 }
