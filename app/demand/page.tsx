@@ -1,5 +1,5 @@
 import { getDemandItems } from "@/lib/demand-data";
-import NavBar from "@/components/NavBar";
+import Link from "next/link";
 
 export default async function DemandPage() {
   const demandItems = await getDemandItems();
@@ -26,7 +26,11 @@ export default async function DemandPage() {
           <tbody>
             {demandItems.map((item) => (
               <tr key={item.sku} className="border-t border-slate-800">
-                <td className="p-4 font-mono">{item.orderNumber}</td>
+                <td className="p-4 font-mono">
+                    <Link href={`/demand/${item.orderNumber}`} className="hover:underline">
+                    {item.orderNumber}
+                  </Link>
+                </td>
                 <td className="p-4 font-mono">{item.customerName}</td>
                 <td className="p-4 font-mono">{item.sku}</td>
                 <td className="p-4 font-mono">{item.quantity}</td>

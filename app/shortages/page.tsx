@@ -1,6 +1,5 @@
 import { calculateShortages } from "@/lib/mrp";
 import Link from "next/link";
-import NavBar from "@/components/NavBar";
 
 export default async function ShortagesPage() {
   const shortages = await calculateShortages();

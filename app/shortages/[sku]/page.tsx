@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { calculateShortageTrace } from "@/lib/mrp";
-import NavBar from "@/components/NavBar";
 
 export default async function ShortageDetailPage({
   params,
@@ -19,12 +18,13 @@ export default async function ShortageDetailPage({
 
   const summaryBySource = traces.reduce(
     (summary, trace) => {
-      const existing = summary.get(trace.sourceSku);
+      const key = `${trace.orderNumber}-${trace.sourceSku}`;
+      const existing = summary.get(key);
 
       if (existing) {
         existing.required += trace.requiredQuantity;
       } else {
-        summary.set(trace.sourceSku, {
+        summary.set(key, {
           sourceSku: trace.sourceSku,
           orderNumber: trace.orderNumber,
           customerName: trace.customerName,
@@ -87,7 +87,9 @@ export default async function ShortageDetailPage({
               </div>
 
               <div className="mt-1 text-sm text-slate-300">
-                Sales Order {source.orderNumber}
+                <Link href={`/demand/${source.orderNumber}`} className="hover:underline">
+                  Sales Order {source.orderNumber}
+                </Link>
               </div>
             </div>
           ))}
@@ -116,7 +118,11 @@ export default async function ShortageDetailPage({
                 key={`${trace.sourceSku}-${trace.componentSku}-${index}`}
                 className="border-t border-slate-800"
               >
-                <td className="p-4 font-mono">{trace.orderNumber}</td>
+                <td className="p-4 font-mono">
+                  <Link href={`/demand/${trace.orderNumber}`} className="hover:underline">
+                    {trace.orderNumber}
+                  </Link>
+                </td>
                 <td className="p-4">{trace.customerName}</td>
                 <td className="p-4">{trace.dueDate}</td>
                 <td className="p-4 font-mono">{trace.sourceSku}</td>
