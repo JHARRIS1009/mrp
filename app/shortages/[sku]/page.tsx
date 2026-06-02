@@ -11,6 +11,41 @@ export default async function ShortageDetailPage({
 
   const traces = await calculateShortageTrace(decodedSku);
 
+  const totalRequired = traces.reduce(
+    (sum, trace) => sum + trace.requiredQuantity,
+    0
+  );
+
+  const summaryBySource = traces.reduce(
+    (summary, trace) => {
+      const existing = summary.get(trace.sourceSku);
+
+      if (existing) {
+        existing.required += trace.requiredQuantity;
+      } else {
+        summary.set(trace.sourceSku, {
+          sourceSku: trace.sourceSku,
+          orderNumber: trace.orderNumber,
+          customerName: trace.customerName,
+          required: trace.requiredQuantity,
+        });
+      }
+
+      return summary;
+    },
+    new Map<
+      string,
+      {
+        sourceSku: string;
+        orderNumber: string;
+        customerName: string;
+        required: number;
+      }
+    >()
+  );
+
+  const demandSourceCount = traces.length;
+
   return (
     <main className="min-h-screen bg-slate-950 p-8 text-white">
       <Link href="/shortages" className="text-sm text-slate-300 hover:text-white">
@@ -23,10 +58,48 @@ export default async function ShortageDetailPage({
         Why <span className="font-mono text-white">{decodedSku}</span> is required.
       </p>
 
+      <div className="mt-6 rounded-xl border border-slate-700 bg-slate-900 p-6">
+        <div className="text-2xl font-bold">
+          {totalRequired} {decodedSku} Required
+        </div>
+
+        <p className="mt-2 text-slate-300">
+          Generated from {demandSourceCount} demand source
+          {demandSourceCount === 1 ? "" : "s"}.
+        </p>
+      </div>
+
+      <div className="mt-4 rounded-xl border border-slate-700 bg-slate-900 p-6">
+
+      <div className="mt-4 space-y-3">
+          {[...summaryBySource.values()].map((source) => (
+            <div
+              key={`${source.orderNumber}-${source.sourceSku}`}
+              className="rounded-lg border border-slate-800 p-4"
+            >
+              <div className="text-xl font-mono font-semibold">
+                {source.sourceSku}
+              </div>
+
+              <div className="font-mono">
+                {source.required} Required
+              </div>
+
+              <div className="mt-1 text-sm text-slate-300">
+                Sales Order {source.orderNumber}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-8 overflow-hidden rounded-xl border border-slate-700">
         <table className="w-full border-collapse text-left">
           <thead className="bg-slate-900 text-slate-300">
             <tr>
+              <th className="p-4">Order</th>
+              <th className="p-4">Customer</th>
+              <th className="p-4">Due Date</th>
               <th className="p-4">Source SKU</th>
               <th className="p-4">Path</th>
               <th className="p-4 text-right">Demand Qty</th>
@@ -42,6 +115,9 @@ export default async function ShortageDetailPage({
                 key={`${trace.sourceSku}-${trace.componentSku}-${index}`}
                 className="border-t border-slate-800"
               >
+                <td className="p-4 font-mono">{trace.orderNumber}</td>
+                <td className="p-4">{trace.customerName}</td>
+                <td className="p-4">{trace.dueDate}</td>
                 <td className="p-4 font-mono">{trace.sourceSku}</td>
                 <td className="p-4 font-mono">{trace.path.join(" → ")}</td>
                 <td className="p-4 text-right">{trace.demandQuantity}</td>
@@ -55,7 +131,7 @@ export default async function ShortageDetailPage({
 
             {traces.length === 0 && (
               <tr className="border-t border-slate-800">
-                <td className="p-4 text-slate-300" colSpan={6}>
+                <td className="p-4 text-slate-300" colSpan={9}>
                   No trace lines found for this SKU.
                 </td>
               </tr>

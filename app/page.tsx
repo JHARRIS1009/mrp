@@ -4,6 +4,7 @@ const links = [
   { href: "/inventory", label: "Inventory" },
   { href: "/can-build", label: "Can Build" },
   { href: "/shortages", label: "Shortages" },
+  { href: "/demand", label: "Demand" },
 ];
 
 export default function HomePage() {
@@ -14,7 +15,7 @@ export default function HomePage() {
         Inventory planning, BOM explosion, shortages, and build capacity.
       </p>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-4">
         {links.map((link) => (
           <Link
             key={link.href}

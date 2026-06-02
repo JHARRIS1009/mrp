@@ -4,6 +4,9 @@ import { getInventoryItems } from "@/lib/inventory-data";
 
 export type RequirementTrace = {
     componentSku: string;
+    orderNumber: string;
+    customerName: string;
+    dueDate: string;
     sourceSku: string;
     demandQuantity: number;
     netBuildQuantity: number;
@@ -48,7 +51,11 @@ export async function calculateShortages(): Promise<ShortageResult[]> {
     return quantityNeeded - quantityUsed;
   }
 
-  function explodeDemand(sku: string, quantity: number) {
+  function explodeDemand(
+    sku: string,
+    quantity: number
+  ) {
+
     addRequirement(sku, quantity);
 
     const netRequirement = useAvailableInventory(sku, quantity);
@@ -77,8 +84,6 @@ export async function calculateShortages(): Promise<ShortageResult[]> {
       ? originalInventory.onHand - originalInventory.allocated
       : 0;
 
-    const remainingAvailable = availableInventory.get(sku) ?? 0;
-    const availableUsed = originalAvailable - remainingAvailable;
     const netRequired = Math.max(required - originalAvailable, 0);
     const shortage = netRequired;
 
@@ -88,6 +93,7 @@ export async function calculateShortages(): Promise<ShortageResult[]> {
       available: originalAvailable,
       netRequired,
       shortage,
+      traces: [],
     });
   }
 
@@ -121,6 +127,9 @@ export async function calculateShortageTrace(
   function explodeDemand(
     sku: string,
     quantity: number,
+    orderNumber: string,
+    customerName: string,
+    dueDate: string,
     sourceSku: string,
     demandQuantity: number,
     path: string[]
@@ -140,6 +149,9 @@ export async function calculateShortageTrace(
       if (child.childSku === targetSku) {
         traces.push({
           componentSku: child.childSku,
+          orderNumber,
+          customerName,
+          dueDate,
           sourceSku,
           demandQuantity,
           netBuildQuantity: netRequirement,
@@ -152,6 +164,9 @@ export async function calculateShortageTrace(
       explodeDemand(
         child.childSku,
         requiredQuantity,
+        orderNumber,
+        customerName,
+        dueDate,
         sourceSku,
         demandQuantity,
         childPath
@@ -163,6 +178,9 @@ export async function calculateShortageTrace(
     explodeDemand(
       demand.sku,
       demand.quantity,
+      demand.orderNumber,
+      demand.customerName,
+      demand.dueDate,
       demand.sku,
       demand.quantity,
       [demand.sku]
