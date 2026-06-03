@@ -24,8 +24,11 @@ export default async function DemandPage() {
           </thead>
 
           <tbody>
-            {demandItems.map((item) => (
-              <tr key={item.sku} className="border-t border-slate-800">
+            {demandItems.map((item, index) => (
+              <tr
+                key={`${item.orderNumber}-${item.sku}-${index}`}
+                className="border-t border-slate-800"
+              >
                 <td className="p-4 font-mono">
                     <Link href={`/demand/${item.orderNumber}`} className="hover:underline">
                     {item.orderNumber}
