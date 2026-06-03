@@ -21,7 +21,13 @@ export default async function WhereUsedPage({
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">
+        <Link
+        href="/bom"
+        className="text-sm text-slate-300 hover:text-white"
+        >
+        ← Back to BOM Explorer
+        </Link>
+      <h1 className="mt-6 text-3xl font-bold">
         Where Used:{" "}
         <span className="font-mono">{decodedSku}</span>
       </h1>

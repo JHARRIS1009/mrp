@@ -18,6 +18,8 @@ export default async function ShortagesPage() {
               <th className="p-4">SKU</th>
               <th className="p-4 text-right">Gross Required</th>
               <th className="p-4 text-right">Available</th>
+              <th className="p-4 text-right">Incoming PO</th>
+              <th className="p-4 text-right">Projected Available</th>
               <th className="p-4 text-right">Net Required</th>
               <th className="p-4 text-right">Shortage</th>
             </tr>
@@ -26,18 +28,22 @@ export default async function ShortagesPage() {
           <tbody>
             {shortages.map((item) => (
               <tr key={item.sku} className="border-t border-slate-800">
-                <td className="p-4 font-mono">
-                    <Link href={`/shortages/${encodeURIComponent(item.sku)}`} className="hover:underline">
-                        {item.sku}
-                    </Link>
-                </td>
-                <td className="p-4 text-right">{item.required}</td>
-                <td className="p-4 text-right">{item.available}</td>
-                <td className="p-4 text-right">{item.netRequired}</td>
-                <td className="p-4 text-right font-semibold">
-                  {item.shortage}
-                </td>
-              </tr>
+              <td className="p-4 font-mono">
+                <Link
+                  href={`/shortages/${encodeURIComponent(item.sku)}`}
+                  className="hover:underline"
+                >
+                  {item.sku}
+                </Link>
+              </td>
+
+              <td className="p-4 text-right">{item.required}</td>
+              <td className="p-4 text-right">{item.available}</td>
+              <td className="p-4 text-right">{item.incoming}</td>
+              <td className="p-4 text-right">{item.projectedAvailable}</td>
+              <td className="p-4 text-right">{item.netRequired}</td>
+              <td className="p-4 text-right font-semibold">{item.shortage}</td>
+            </tr>
             ))}
           </tbody>
         </table>

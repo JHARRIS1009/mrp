@@ -9,6 +9,7 @@ export default function NavBar() {
       <Link href="/can-build">Can Build</Link>
       <Link href="/shortages">Shortages</Link>
       <Link href="/bom/">BOM</Link>
+      <Link href="/purchase-orders/">Purchase Orders</Link>
     </nav>
   );
 }

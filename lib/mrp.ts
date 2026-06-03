@@ -1,6 +1,7 @@
 import { getBomLines } from "@/lib/bom-data";
 import { getDemandItems } from "@/lib/demand-data";
 import { getInventoryItems } from "@/lib/inventory-data";
+import { getPurchaseOrderLines } from "@/lib/purchase-orders-data";
 
 export type RequirementTrace = {
     componentSku: string;
@@ -19,6 +20,8 @@ export type ShortageResult = {
   sku: string;
   required: number;
   available: number;
+  incoming: number;
+  projectedAvailable: number;
   netRequired: number;
   shortage: number;
   traces: RequirementTrace[];
@@ -28,6 +31,7 @@ export async function calculateShortages(): Promise<ShortageResult[]> {
   const inventoryItems = await getInventoryItems();
   const bomLines = await getBomLines();
   const demandItems = await getDemandItems();
+  const purchaseOrderLines = await getPurchaseOrderLines();
 
   const requirements = new Map<string, number>();
   const availableInventory = new Map<string, number>();
@@ -84,13 +88,21 @@ export async function calculateShortages(): Promise<ShortageResult[]> {
       ? originalInventory.onHand - originalInventory.allocated
       : 0;
 
-    const netRequired = Math.max(required - originalAvailable, 0);
+    const incoming = purchaseOrderLines
+      .filter((line) => line.sku === sku)
+      .reduce((sum, line) => sum + line.quantity, 0);
+
+    const projectedAvailable = originalAvailable + incoming;
+
+    const netRequired = Math.max(required - projectedAvailable, 0);
     const shortage = netRequired;
 
     results.push({
       sku,
       required,
       available: originalAvailable,
+      incoming,
+      projectedAvailable,
       netRequired,
       shortage,
       traces: [],
