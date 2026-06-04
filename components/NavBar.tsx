@@ -8,7 +8,7 @@ export default function NavBar() {
       <Link href="/demand">Demand</Link>
       <Link href="/can-build">Can Build</Link>
       <Link href="/shortages">Shortages</Link>
-      <Link href="/bom/">BOM</Link>
+      <Link href="/bom/">Components</Link>
       <Link href="/purchase-orders/">Purchase Orders</Link>
       <Link href="/exceptions/">Exceptions</Link>
     </nav>
