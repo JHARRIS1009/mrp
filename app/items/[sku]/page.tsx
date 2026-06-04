@@ -201,7 +201,7 @@ export default async function ItemDetailPage({
                     </Link>
                     </td>
 
-                    <td className="p-4">{po.vendor}</td>
+                    <td className="p-4">{po.vendorName}</td>
 
                     <td className="p-4">{po.expectedDate}</td>
 
