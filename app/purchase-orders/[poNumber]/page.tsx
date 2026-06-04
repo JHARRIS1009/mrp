@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getPurchaseOrderLinesByPoNumber } from "@/lib/purchase-orders-data";
 import Link from "next/link";
 import { formatDate } from "@/lib/date-utils";
+import BackButton from "@/components/BackButton";
 
 export default async function PurchaseOrderDetailPage({
   params,
@@ -20,12 +21,8 @@ export default async function PurchaseOrderDetailPage({
 
   return (
     <section>
-      <Link
-        href="/purchase-orders"
-        className="text-sm text-slate-300 hover:text-white"
-        >
-        ← Back to Purchase Orders
-        </Link>
+      <BackButton />
+
       <h1 className="mt-6 text-3xl font-bold">
         Purchase Order {poNumber}
       </h1>

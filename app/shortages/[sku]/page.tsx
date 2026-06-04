@@ -2,6 +2,7 @@ import Link from "next/link";
 import { calculateShortageTrace, calculateShortages } from "@/lib/mrp";
 import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
 import { formatDate } from "@/lib/date-utils";
+import BackButton from "@/components/BackButton";
 
 export default async function ShortageDetailPage({
   params,
@@ -93,12 +94,7 @@ export default async function ShortageDetailPage({
 
   return (
     <section>
-      <Link
-        href="/shortages"
-        className="text-sm text-slate-300 hover:text-white"
-      >
-        ← Back to Shortages
-      </Link>
+      <BackButton />
 
       <h1 className="mt-6 text-3xl font-bold">Requirement Trace</h1>
 

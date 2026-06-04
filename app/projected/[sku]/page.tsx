@@ -2,6 +2,7 @@ import Link from "next/link";
 import { calculateProjectedInventory } from "@/lib/projected-inventory";
 import { getInventoryItems } from "@/lib/inventory-data";
 import { formatDate } from "@/lib/date-utils";
+import BackButton from "@/components/BackButton";
 
 export default async function ProjectedInventoryPage({
   params,
@@ -22,12 +23,7 @@ export default async function ProjectedInventoryPage({
 
   return (
     <section>
-      <Link
-        href={`/shortages/${encodeURIComponent(decodedSku)}`}
-        className="text-sm text-slate-300 hover:text-white"
-      >
-        ← Back to Requirement Trace
-      </Link>
+      <BackButton />
 
       <h1 className="mt-6 text-3xl font-bold">
         Projected Inventory:{" "}

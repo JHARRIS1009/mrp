@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getBomLines } from "@/lib/bom-data";
+import BackButton from "@/components/BackButton";
 
 export default async function BomDetailPage({
   params,
@@ -17,9 +18,7 @@ export default async function BomDetailPage({
 
   return (
     <section>
-      <Link href="/bom" className="text-sm text-slate-300 hover:text-white">
-        ← Back to BOM Explorer
-      </Link>
+      <BackButton />
 
       <h1 className="mt-6 text-3xl font-bold">
         BOM for <span className="font-mono">{decodedSku}</span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { calculateRecursiveWhereUsed } from "@/lib/where-used";
+import BackButton from "@/components/BackButton";
 
 export default async function WhereUsedPage({
   params,
@@ -21,12 +22,8 @@ export default async function WhereUsedPage({
 
   return (
     <section>
-        <Link
-        href="/bom"
-        className="text-sm text-slate-300 hover:text-white"
-        >
-        ← Back to BOM Explorer
-        </Link>
+        <BackButton />
+
       <h1 className="mt-6 text-3xl font-bold">
         Where Used:{" "}
         <span className="font-mono">{decodedSku}</span>
