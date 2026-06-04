@@ -4,6 +4,10 @@ import { calculateProjectedInventory } from "@/lib/projected-inventory";
 export type MrpException = {
     sku: string;
     type: "Current Shortage" | "Projected Shortage";
+    grossRequired: number;
+    available: number;
+    incoming: number;
+    netRequired: number;
     currentShortage: number;
     lowestProjectedAvailable: number;
 };
@@ -26,16 +30,24 @@ export async function calculateMrpExceptions(): Promise<MrpException[]> {
         : shortage.available;
 
     if (shortage.shortage > 0) {
-      exceptions.push({
-        sku: shortage.sku,
-        type: "Current Shortage",
-        currentShortage: shortage.shortage,
-        lowestProjectedAvailable,
-      });
+        exceptions.push({
+            sku: shortage.sku,
+            type: "Current Shortage",
+            grossRequired: shortage.required,
+            available: shortage.available,
+            incoming: shortage.incoming,
+            netRequired: shortage.netRequired,
+            currentShortage: shortage.shortage,
+            lowestProjectedAvailable,
+        });
     } else if (lowestProjectedAvailable < 0) {
       exceptions.push({
         sku: shortage.sku,
         type: "Projected Shortage",
+        grossRequired: shortage.required,
+        available: shortage.available,
+        incoming: shortage.incoming,
+        netRequired: shortage.netRequired,
         currentShortage: 0,
         lowestProjectedAvailable,
       });

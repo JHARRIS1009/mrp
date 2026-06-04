@@ -18,50 +18,59 @@ export default async function ExceptionsPage() {
             <tr>
               <th className="p-4">SKU</th>
               <th className="p-4">Exception Type</th>
-              <th className="p-4 text-right">Current Shortage</th>
-              <th className="p-4 text-right">Lowest Projected Available</th>
+              <th className="p-4 text-right">Gross Required</th>
+              <th className="p-4 text-right">Available</th>
+              <th className="p-4 text-right">Incoming</th>
+              <th className="p-4 text-right">Net Required</th>
+              <th className="p-4 text-right">Lowest Projected</th>
               <th className="p-4">Links</th>
             </tr>
           </thead>
 
           <tbody>
             {exceptions.map((item) => (
-              <tr key={item.sku} className="border-t border-slate-800">
+                <tr key={item.sku} className="border-t border-slate-800">
                 <td className="p-4 font-mono">{item.sku}</td>
-
-                <td className="p-4">{item.type}</td>
-
-                <td className="p-4 text-right">
-                  {item.currentShortage}
-                </td>
-
-                <td className="p-4 text-right font-semibold">
-                  {item.lowestProjectedAvailable}
-                </td>
-
                 <td className="p-4">
-                  <div className="flex gap-4 text-sm">
-                    <Link
-                      href={`/shortages/${encodeURIComponent(item.sku)}`}
-                      className="hover:underline"
+                    <span className={
+                        item.type === "Current Shortage"
+                            ? "font-semibold text-red-400"
+                            : "font-semibold text-yellow-400"
+                    }
                     >
-                      Trace
+                        {item.type}
+                    </span>
+                </td>
+                <td className="p-4 text-right">{item.grossRequired}</td>
+                <td className="p-4 text-right">{item.available}</td>
+                <td className="p-4 text-right">{item.incoming}</td>
+                <td className="p-4 text-right font-semibold">{item.netRequired}</td>
+                <td className="p-4 text-right font-semibold">
+                    {item.lowestProjectedAvailable}
+                </td>
+                <td className="p-4">
+                    <div className="flex gap-4 text-sm">
+                    <Link
+                        href={`/shortages/${encodeURIComponent(item.sku)}`}
+                        className="hover:underline"
+                    >
+                        Trace
                     </Link>
 
                     <Link
-                      href={`/projected/${encodeURIComponent(item.sku)}`}
-                      className="hover:underline"
+                        href={`/projected/${encodeURIComponent(item.sku)}`}
+                        className="hover:underline"
                     >
-                      Projected
+                        Projected
                     </Link>
-                  </div>
+                    </div>
                 </td>
-              </tr>
+                </tr>
             ))}
 
             {exceptions.length === 0 && (
               <tr className="border-t border-slate-800">
-                <td className="p-4 text-slate-300" colSpan={5}>
+                <td className="p-4 text-slate-300" colSpan={8}>
                   No current or projected MRP exceptions.
                 </td>
               </tr>
