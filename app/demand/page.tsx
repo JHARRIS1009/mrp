@@ -1,4 +1,5 @@
 import { getDemandItems } from "@/lib/demand-data";
+import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 
 export default async function DemandPage() {
@@ -37,7 +38,7 @@ export default async function DemandPage() {
                 <td className="p-4 font-mono">{item.customerName}</td>
                 <td className="p-4 font-mono">{item.sku}</td>
                 <td className="p-4 font-mono">{item.quantity}</td>
-                <td className="p-4 text-right">{item.dueDate}</td>
+                <td className="p-4 text-right">{formatDate(item.dueDate)}</td>
               </tr>
             ))}
           </tbody>

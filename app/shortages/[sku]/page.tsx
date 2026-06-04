@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { calculateShortageTrace, calculateShortages } from "@/lib/mrp";
 import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
+import { formatDate } from "@/lib/date-utils";
 
 export default async function ShortageDetailPage({
   params,
@@ -117,6 +118,13 @@ export default async function ShortageDetailPage({
           {demandSourceCount === 1 ? "" : "s"}.
         </p>
 
+        <Link
+          href={`/projected/${encodeURIComponent(decodedSku)}`}
+          className="mt-4 inline-block text-sm text-slate-300 hover:text-white"
+        >
+          View projected inventory →
+        </Link>
+
         <div className="mt-6 grid gap-4 md:grid-cols-5">
           <div className="rounded-lg border border-slate-800 p-4">
             <div className="text-sm text-slate-400">Gross Required</div>
@@ -140,7 +148,7 @@ export default async function ShortageDetailPage({
           </div>
 
           <div className="rounded-lg border border-slate-800 p-4">
-            <div className="text-sm text-slate-400">Projected Available</div>
+            <div className="text-sm text-slate-400">Available + Incoming</div>
             <div className="mt-1 text-xl font-semibold">
               {shortage?.projectedAvailable ?? totalIncoming}
             </div>
@@ -192,7 +200,7 @@ export default async function ShortageDetailPage({
                     </td>
                     <td className="p-4">{line.vendorName}</td>
                     <td className="p-4 text-right">{line.quantity}</td>
-                    <td className="p-4">{line.expectedDate}</td>
+                    <td className="p-4">{formatDate(line.expectedDate)}</td>
                   </tr>
                 ))}
               </tbody>

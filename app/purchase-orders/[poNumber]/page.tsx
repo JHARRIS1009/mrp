@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPurchaseOrderLinesByPoNumber } from "@/lib/purchase-orders-data";
 import Link from "next/link";
+import { formatDate } from "@/lib/date-utils";
 
 export default async function PurchaseOrderDetailPage({
   params,
@@ -37,7 +38,7 @@ export default async function PurchaseOrderDetailPage({
 
         <div className="mt-2">
           <span className="font-semibold">Expected Date:</span>{" "}
-          {firstLine.expectedDate}
+          {formatDate(firstLine.expectedDate)}
         </div>
       </div>
 
