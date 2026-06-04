@@ -1,5 +1,6 @@
 import { getInventoryItems } from "@/lib/inventory-data";
 import NavBar from "@/components/NavBar";
+import Link from "next/link";
 
 export default async function InventoryPage() {
     const inventoryItems = await getInventoryItems();
@@ -30,7 +31,14 @@ export default async function InventoryPage() {
 
                             return (
                                 <tr key={item.sku} className="border-t border-slate-800">
-                                    <td className="p-4 font-mono">{item.sku}</td>
+                                    <td className="p-4 font-mono">
+                                        <Link
+                                            href={`/items/${encodeURIComponent(item.sku)}`}
+                                            className="hover:underline"
+                                        >
+                                            {item.sku}
+                                        </Link>
+                                    </td>
                                     <td className="p-4">{item.description}</td>
                                     <td className="p-4 text-right">{item.onHand}</td>
                                     <td className="p-4 text-right">{item.allocated}</td>

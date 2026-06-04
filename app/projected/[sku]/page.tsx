@@ -27,7 +27,14 @@ export default async function ProjectedInventoryPage({
 
       <h1 className="mt-6 text-3xl font-bold">
         Projected Inventory:{" "}
-        <span className="font-mono">{decodedSku}</span>
+        <span className="font-mono">
+            <Link
+                href={`/items/${encodeURIComponent(decodedSku)}`}
+                className="hover:underline"
+            >
+                {decodedSku}
+            </Link>
+        </span>
       </h1>
 
       <p className="mt-2 text-slate-300">

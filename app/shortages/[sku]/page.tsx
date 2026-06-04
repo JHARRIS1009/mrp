@@ -99,14 +99,23 @@ export default async function ShortageDetailPage({
       <h1 className="mt-6 text-3xl font-bold">Requirement Trace</h1>
 
       <p className="mt-2 text-slate-300">
-        Why <span className="font-mono text-white">{decodedSku}</span> is
+        Why <span className="font-mono text-white">
+          <Link 
+            href={`/items/${encodeURIComponent(decodedSku)}`}
+            className="hover:underline"
+          >
+            {decodedSku}</Link> </span> is
         required.
       </p>
 
       <div className="mt-6 rounded-xl border border-slate-700 bg-slate-900 p-6">
         <div className="text-2xl font-bold">
           {totalRequired}{" "}
-          <span className="font-mono">{decodedSku}</span> Required
+          <span className="font-mono"><Link 
+            href={`/items/${encodeURIComponent(decodedSku)}`}
+            className="hover:underline"
+          >
+            {decodedSku}</Link></span> Required
         </div>
 
         <p className="mt-2 text-slate-300">

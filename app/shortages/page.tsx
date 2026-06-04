@@ -35,6 +35,13 @@ export default async function ShortagesPage() {
                 >
                   {item.sku}
                 </Link>
+
+                <Link 
+                  href={`/items/${encodeURIComponent(item.sku)}`}
+                  className="ml-3 text-xs text-slate-400 hover:text-white"
+                >
+                  item
+                </Link>
               </td>
 
               <td className="p-4 text-right">{item.required}</td>

@@ -1,5 +1,6 @@
 import { calculateCanBuild } from "@/lib/can-build";
 import NavBar from "@/components/NavBar";
+import Link from "next/link";
 
 export default async function CanBuildPage() {
   const results = await calculateCanBuild();
@@ -27,7 +28,14 @@ export default async function CanBuildPage() {
           <tbody>
             {results.map((result) => (
               <tr key={result.sku} className="border-t border-slate-800">
-                <td className="p-4 font-mono">{result.sku}</td>
+                <td className="p-4 font-mono">
+                  <Link
+                    href={`/items/${encodeURIComponent(result.sku)}`}
+                    className="hover:underline"
+                  >
+                    {result.sku}
+                  </Link>
+                </td>
                 <td className="p-4 text-right">{result.parentOnHand}</td>
                 <td className="p-4 text-right">{result.maxAdditionalBuild}</td>
                 <td className="p-4 text-right font-semibold">

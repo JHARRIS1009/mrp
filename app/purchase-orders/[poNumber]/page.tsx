@@ -54,7 +54,14 @@ export default async function PurchaseOrderDetailPage({
                 key={`${line.poNumber}-${line.sku}-${index}`}
                 className="border-t border-slate-800"
               >
-                <td className="p-4 font-mono">{line.sku}</td>
+                <td className="p-4 font-mono">
+                    <Link
+                        href={`/items/${encodeURIComponent(line.sku)}`}
+                        className="hover:underline"
+                    >
+                        {line.sku}
+                    </Link>
+                </td>
                 <td className="p-4 text-right">{line.quantity}</td>
               </tr>
             ))}

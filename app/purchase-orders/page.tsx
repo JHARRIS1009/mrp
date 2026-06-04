@@ -42,7 +42,14 @@ export default async function PurchaseOrdersPage() {
                 </Link>
                 </td>
                 <td className="p-4">{po.vendorName}</td>
-                <td className="p-4 font-mono">{po.sku}</td>
+                <td className="p-4 font-mono">
+                    <Link 
+                        href={`/items/${encodeURIComponent(po.sku)}`}
+                        className="hover:underline"
+                    >
+                        {po.sku}
+                    </Link>
+                </td>
                 <td className="p-4 text-right">{po.quantity}</td>
                 <td className="p-4">{formatDate(po.expectedDate)}</td>
               </tr>

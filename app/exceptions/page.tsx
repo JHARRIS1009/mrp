@@ -30,7 +30,14 @@ export default async function ExceptionsPage() {
           <tbody>
             {exceptions.map((item) => (
                 <tr key={item.sku} className="border-t border-slate-800">
-                <td className="p-4 font-mono">{item.sku}</td>
+                <td className="p-4 font-mono">
+                    <Link
+                        href={`/items/${encodeURIComponent(item.sku)}`}
+                        className="hover:underline"
+                    >
+                        {item.sku}
+                    </Link>
+                </td>
                 <td className="p-4">
                     <span className={
                         item.type === "Current Shortage"

@@ -52,7 +52,14 @@ export default async function BomPage() {
                         href={`/where-used/${encodeURIComponent(child.childSku)}`}
                         className="ml-3 text-xs text-slate-400 hover:text-white"
                         >
-                        where used
+                        where used 
+                        </Link>
+                        <span className="mx-1 text-slate-500">|</span>               
+                        <Link
+                            href={`/items/${encodeURIComponent(child.childSku)}`}
+                            className="text-xs text-slate-400 hover:text-white"
+                        >
+                            item    
                         </Link>
                         </td>
                         <td className="p-4 text-right">{child.qtyPer}</td>

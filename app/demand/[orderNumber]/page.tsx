@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getDemandItemsByOrderNumber } from "@/lib/demand-data";
+import Link from "next/link";
 
 export default async function DemandDetailPage({
   params,
@@ -43,7 +44,14 @@ export default async function DemandDetailPage({
           <tbody>
             {demandItems.map((item) => (
               <tr key={`${item.orderNumber}-${item.sku}`} className="border-t border-slate-800">
-                <td className="p-4 font-mono">{item.sku}</td>
+                <td className="p-4 font-mono">
+                    <Link 
+                        href={`/items/${encodeURIComponent(item.sku)}`}
+                        className="hover:underline"
+                    >
+                        {item.sku}
+                    </Link>
+                </td>
                 <td className="p-4 text-right">{item.quantity}</td>
               </tr>
             ))}

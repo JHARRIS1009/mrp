@@ -36,7 +36,14 @@ export default async function DemandPage() {
                   </Link>
                 </td>
                 <td className="p-4 font-mono">{item.customerName}</td>
-                <td className="p-4 font-mono">{item.sku}</td>
+                <td className="p-4 font-mono">
+                    <Link
+                        href={`/items/${encodeURIComponent(item.sku)}`}
+                        className="hover:underline"
+                    >
+                        {item.sku}
+                    </Link>
+                </td>
                 <td className="p-4 font-mono">{item.quantity}</td>
                 <td className="p-4 text-right">{formatDate(item.dueDate)}</td>
               </tr>
