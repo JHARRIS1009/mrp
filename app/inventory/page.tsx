@@ -41,6 +41,7 @@ export default async function InventoryPage() {
                                     </td>
                                     <td className="p-4">{item.description}</td>
                                     <td className="p-4 text-right">{item.onHand}</td>
+                                    <td className="p-4 text-right">{item.incoming}</td>
                                     <td className="p-4 text-right">{item.allocated}</td>
                                     <td className="p-4 text-right">{available}</td>
                                 </tr>
