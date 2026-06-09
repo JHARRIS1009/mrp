@@ -1,10 +1,11 @@
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
 import { getInventoryItems } from "@/lib/inventory-data";
-import { calculateShortages } from "@/lib/mrp";
+import { getDemandItems } from "@/lib/demand-data";
+import { calculateShortageTrace, calculateShortages } from "@/lib/mrp";
 import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
 import { calculateProjectedInventory } from "@/lib/projected-inventory";
-import { getDemandItems } from "@/lib/demand-data";
+import { formatDate } from "@/lib/date-utils";
 
 export default async function ItemDetailPage({
   params,
@@ -15,19 +16,15 @@ export default async function ItemDetailPage({
   const decodedSku = decodeURIComponent(sku);
 
   const inventoryItems = await getInventoryItems();
+  const demandItems = await getDemandItems();
   const shortages = await calculateShortages();
   const purchaseOrders = await getPurchaseOrderLinesBySku(decodedSku);
   const projectedEvents = await calculateProjectedInventory(decodedSku);
-  const demandItems = await getDemandItems();
 
   const item = inventoryItems.find((item) => item.sku === decodedSku);
   const shortage = shortages.find((item) => item.sku === decodedSku);
 
-  const grossRequired = shortage?.required ?? 0;
-  
-  const openDemand = demandItems.filter(
-    (item) => item.sku === decodedSku
-  );
+  const openDemand = demandItems.filter((item) => item.sku === decodedSku);
 
   const totalDemand = openDemand.reduce(
     (sum, item) => sum + item.quantity,
@@ -36,6 +33,19 @@ export default async function ItemDetailPage({
 
   const available = item ? item.onHand - item.allocated : 0;
   const incoming = purchaseOrders.reduce((sum, po) => sum + po.quantity, 0);
+
+  const grossRequired = shortage?.required ?? 0;
+  const parentAssemblyDemand = Math.max(grossRequired - totalDemand, 0);
+
+  const directPct =
+    grossRequired > 0
+      ? Math.round((totalDemand / grossRequired) * 100)
+      : 0;
+
+  const parentPct =
+    grossRequired > 0
+      ? Math.round((parentAssemblyDemand / grossRequired) * 100)
+      : 0;
 
   return (
     <section>
@@ -49,7 +59,7 @@ export default async function ItemDetailPage({
         {item?.description ?? "No item description found."}
       </p>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-7">
+      <div className="mt-6 grid gap-4 md:grid-cols-5">
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
           <div className="text-sm text-slate-400">On Hand</div>
           <div className="mt-1 text-2xl font-bold">{item?.onHand ?? 0}</div>
@@ -76,155 +86,173 @@ export default async function ItemDetailPage({
             {shortage?.shortage ?? 0}
           </div>
         </div>
+      </div>
 
-        <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
-            <div className="text-sm text-slate-400">Gross Required</div>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
+            <div className="text-sm text-slate-400">Total Requirement</div>
             <div className="mt-1 text-2xl font-bold">{grossRequired}</div>
+          </div>
+
+          <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
+            <div className="text-sm text-slate-400">Direct Sales Demand</div>
+            <div className="mt-1 text-2xl font-bold">{totalDemand}</div>
+          </div>
         </div>
 
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
-            <div className="text-sm text-slate-400">Open Demand</div>
-            <div className="mt-1 text-2xl font-bold">{totalDemand}</div>
+          <h2 className="text-lg font-semibold">Requirement Breakdown</h2>
+
+          <div className="mt-4 space-y-2 text-sm text-slate-300">
+            <div className="flex justify-between">
+              <span>Direct Sales</span>
+              <span>
+                {totalDemand} ({directPct}%)
+              </span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>Parent Assemblies</span>
+              <span>
+                {parentAssemblyDemand} ({parentPct}%)
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-4 flex justify-between border-t border-slate-700 pt-4 font-semibold">
+            <span>Total Requirement</span>
+            <span>{grossRequired}</span>
+          </div>
         </div>
       </div>
-      
+
       <div className="mt-8 rounded-xl border border-slate-700 bg-slate-900 p-6">
-        <h2 className="text-xl font-bold">Open Demand</h2>
+        <h2 className="text-xl font-bold">Direct Sales Requirement</h2>
 
         <div className="mt-4 overflow-hidden rounded-lg border border-slate-800">
-            <table className="w-full border-collapse text-left">
-                <thead className="bg-slate-950 text-slate-300">
-                    <tr>
-                        <th className="p-4">Sales Order</th>
-                        <th className="p-4">Customer</th>
-                        <th className="p-4">Due Date</th>
-                        <th className="p-4 text-right">Quantity</th>
-                    </tr>
-                </thead>
+          <table className="w-full border-collapse text-left">
+            <thead className="bg-slate-950 text-slate-300">
+              <tr>
+                <th className="p-4">Sales Order</th>
+                <th className="p-4">Customer</th>
+                <th className="p-4">Due Date</th>
+                <th className="p-4 text-right">Quantity</th>
+              </tr>
+            </thead>
 
-                <tbody>
-                    {openDemand.map((item) => (
-                        <tr
-                            key={`${item.orderNumber}-${item.sku}`}
-                            className="border-t border-slate-800"
-                        >
-                            <td className="p-4 font-mono">
-                                <Link 
-                                    href={`/demand/${item.orderNumber}`}
-                                    className="hover:underline"
-                                >
-                                    {item.orderNumber}
-                                </Link>
-                            </td>
-                            <td className="p-4">{item.customerName}</td>
+            <tbody>
+              {openDemand.map((item, index) => (
+                <tr
+                  key={`${item.orderNumber}-${item.sku}-${index}`}
+                  className="border-t border-slate-800"
+                >
+                  <td className="p-4 font-mono">
+                    <Link
+                      href={`/demand/${encodeURIComponent(item.orderNumber)}`}
+                      className="hover:underline"
+                    >
+                      {item.orderNumber}
+                    </Link>
+                  </td>
 
-                            <td className="p-4">{item.dueDate}</td>
+                  <td className="p-4">{item.customerName}</td>
+                  <td className="p-4">{formatDate(item.dueDate)}</td>
+                  <td className="p-4 text-right">{item.quantity}</td>
+                </tr>
+              ))}
 
-                            <td className="p-4 text-right">
-                                {item.quantity}
-                            </td>
-                        </tr>
-                    ))}
-                    {openDemand.length === 0 && (
-                        <tr className="border-t border-slate-800">
-                            <td
-                            className="p-4 text-slate-300"
-                            colSpan={4}
-                            >
-                            No open demand for this SKU.
-                            </td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+              {openDemand.length === 0 && (
+                <tr className="border-t border-slate-800">
+                  <td className="p-4 text-slate-300" colSpan={4}>
+                    No open demand for this SKU.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-4 gap-4 text-center py-3">
+      <div className="mt-8 grid w-full grid-cols-4 gap-4">
         <Link
           href={`/shortages/${encodeURIComponent(decodedSku)}`}
-          className="rounded-lg border border-slate-700 px-4 py-2 hover:bg-slate-800"
+          className="rounded-lg border border-slate-700 px-4 py-3 text-center hover:bg-slate-800"
         >
           Requirement Trace
         </Link>
 
         <Link
           href={`/projected/${encodeURIComponent(decodedSku)}`}
-          className="rounded-lg border border-slate-700 px-4 py-2 hover:bg-slate-800"
+          className="rounded-lg border border-slate-700 px-4 py-3 text-center hover:bg-slate-800"
         >
           Projected Inventory
         </Link>
 
         <Link
           href={`/bom/${encodeURIComponent(decodedSku)}`}
-          className="rounded-lg border border-slate-700 px-4 py-2 hover:bg-slate-800"
+          className="rounded-lg border border-slate-700 px-4 py-3 text-center hover:bg-slate-800"
         >
           Components
         </Link>
 
         <Link
           href={`/where-used/${encodeURIComponent(decodedSku)}`}
-          className="rounded-lg border border-slate-700 px-4 py-2 hover:bg-slate-800"
+          className="rounded-lg border border-slate-700 px-4 py-3 text-center hover:bg-slate-800"
         >
           Where Used
         </Link>
       </div>
 
       <div className="mt-8 rounded-xl border border-slate-700 bg-slate-900 p-6">
-        <h2 className="text-xl font-bold">
-            Incoming Purchase Orders
-        </h2>
+        <h2 className="text-xl font-bold">Incoming Purchase Orders</h2>
 
         <div className="mt-4 overflow-hidden rounded-lg border border-slate-800">
-            <table className="w-full border-collapse text-left">
+          <table className="w-full border-collapse text-left">
             <thead className="bg-slate-950 text-slate-300">
-                <tr>
+              <tr>
                 <th className="p-4">PO Number</th>
                 <th className="p-4">Vendor</th>
                 <th className="p-4">Expected Date</th>
                 <th className="p-4 text-right">Quantity</th>
-                </tr>
+              </tr>
             </thead>
 
             <tbody>
-                {purchaseOrders.map((po) => (
+              {purchaseOrders.map((po, index) => (
                 <tr
-                    key={`${po.poNumber}-${po.sku}`}
-                    className="border-t border-slate-800"
+                  key={`${po.poNumber}-${po.sku}-${index}`}
+                  className="border-t border-slate-800"
                 >
-                    <td className="p-4 font-mono">
+                  <td className="p-4 font-mono">
                     <Link
-                        href={`/purchase-orders/${po.poNumber}`}
-                        className="hover:underline"
+                      href={`/purchase-orders/${encodeURIComponent(
+                        po.poNumber
+                      )}`}
+                      className="hover:underline"
                     >
-                        {po.poNumber}
+                      {po.poNumber}
                     </Link>
-                    </td>
+                  </td>
 
-                    <td className="p-4">{po.vendorName}</td>
-
-                    <td className="p-4">{po.expectedDate}</td>
-
-                    <td className="p-4 text-right">
-                    {po.quantity}
-                    </td>
+                  <td className="p-4">{po.vendorName}</td>
+                  <td className="p-4">{formatDate(po.expectedDate)}</td>
+                  <td className="p-4 text-right">{po.quantity}</td>
                 </tr>
-                ))}
+              ))}
 
-                {purchaseOrders.length === 0 && (
+              {purchaseOrders.length === 0 && (
                 <tr className="border-t border-slate-800">
-                    <td
-                    className="p-4 text-slate-300"
-                    colSpan={4}
-                    >
+                  <td className="p-4 text-slate-300" colSpan={4}>
                     No open purchase orders for this SKU.
-                    </td>
+                  </td>
                 </tr>
-                )}
+              )}
             </tbody>
-            </table>
+          </table>
         </div>
       </div>
+
       <div className="mt-8 rounded-xl border border-slate-700 bg-slate-900 p-6">
         <h2 className="text-xl font-bold">Projected Inventory Events</h2>
 
@@ -246,7 +274,7 @@ export default async function ItemDetailPage({
                   key={`${event.date}-${event.reference}-${index}`}
                   className="border-t border-slate-800"
                 >
-                  <td className="p-4">{event.date}</td>
+                  <td className="p-4">{formatDate(event.date)}</td>
                   <td className="p-4">{event.type}</td>
                   <td className="p-4 font-mono">{event.reference}</td>
                   <td className="p-4 text-right">{event.quantityChange}</td>

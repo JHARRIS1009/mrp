@@ -1,6 +1,7 @@
 import { getInventoryItems } from "@/lib/inventory-data";
 import { calculateShortageTrace } from "@/lib/mrp";
 import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
+import { getDemandItems } from "@/lib/demand-data";
 
 export type ProjectedInventoryEvent = {
   date: string;
@@ -19,6 +20,7 @@ export async function calculateProjectedInventory(
 ): Promise<ProjectedInventoryEvent[]> {
   const inventoryItems = await getInventoryItems();
   const traces = await calculateShortageTrace(sku);
+  const demandItems = await getDemandItems();
   const purchaseOrderLines = await getPurchaseOrderLinesBySku(sku);
 
   const inventoryItem = inventoryItems.find((item) => item.sku === sku);
@@ -27,12 +29,24 @@ export async function calculateProjectedInventory(
     ? inventoryItem.onHand - inventoryItem.allocated
     : 0;
 
-  const demandEvents = traces.map((trace) => ({
-    date: trace.dueDate,
-    type: "Demand" as const,
-    reference: `SO ${trace.orderNumber}`,
-    quantityChange: -trace.requiredQuantity,
+  const directDemandEvents = demandItems
+    .filter((item) => item.sku === sku)
+    .map((item) => ({
+        date: item.dueDate,
+        type: "Demand" as const,
+        reference: item.orderNumber,
+        quantityChange: -item.quantity,
   }));
+
+const tracedDemandEvents = traces.map((trace) => ({
+  date: trace.dueDate,
+  type: "Demand" as const,
+  reference: trace.orderNumber,
+  quantityChange: -trace.requiredQuantity,
+}));
+
+const demandEvents =
+  directDemandEvents.length > 0 ? directDemandEvents : tracedDemandEvents;
 
   const purchaseOrderEvents = purchaseOrderLines.map((line) => ({
     date: line.expectedDate,

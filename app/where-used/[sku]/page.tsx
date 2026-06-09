@@ -16,9 +16,11 @@ export default async function WhereUsedPage({
     (line) => line.path.length === 2
   );
 
-  const ultimateUsed = usedBy.filter(
-    (line) => line.path.length > 2
-  );
+  const ultimateUsed = usedBy.filter((line) => {
+    return !usedBy.some((otherLine) =>
+        otherLine.path.slice(1).includes(line.parentSku)
+    );
+  });
 
   return (
     <section>
