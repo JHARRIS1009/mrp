@@ -35,7 +35,7 @@ export async function calculateProjectedInventory(
         date: item.dueDate,
         type: "Demand" as const,
         reference: item.orderNumber,
-        quantityChange: -item.quantity,
+        quantityChange: -item.quantityOpen,
   }));
 
 const tracedDemandEvents = traces.map((trace) => ({

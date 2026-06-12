@@ -77,7 +77,7 @@ export async function calculateShortages(): Promise<ShortageResult[]> {
   }
 
   for (const demand of demandItems) {
-    explodeDemand(demand.sku, demand.quantity);
+    explodeDemand(demand.sku, demand.quantityOpen);
   }
 
   const results: ShortageResult[] = [];
@@ -189,12 +189,12 @@ export async function calculateShortageTrace(
   for (const demand of demandItems) {
     explodeDemand(
       demand.sku,
-      demand.quantity,
+      demand.quantityOpen,
       demand.orderNumber,
       demand.customerName,
       demand.dueDate,
       demand.sku,
-      demand.quantity,
+      demand.quantityOpen,
       [demand.sku]
     );
   }

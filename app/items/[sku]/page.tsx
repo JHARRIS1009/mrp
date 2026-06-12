@@ -27,7 +27,7 @@ export default async function ItemDetailPage({
   const openDemand = demandItems.filter((item) => item.sku === decodedSku);
 
   const totalDemand = openDemand.reduce(
-    (sum, item) => sum + item.quantity,
+    (sum, item) => sum + item.quantityOpen,
     0
   );
 
@@ -158,7 +158,7 @@ export default async function ItemDetailPage({
 
                   <td className="p-4">{item.customerName}</td>
                   <td className="p-4">{formatDate(item.dueDate)}</td>
-                  <td className="p-4 text-right">{item.quantity}</td>
+                  <td className="p-4 text-right">{item.quantityOpen}</td>
                 </tr>
               ))}
 

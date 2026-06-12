@@ -20,7 +20,7 @@ export default async function DemandPage() {
               <th className="p-4">Customer Name</th>  
               <th className="p-4">SKU</th>
               <th className="p-4">Quantity</th>
-              <th className="p-4 text-right">Due Date</th>
+              <th className="p-4 text-right">Order Date</th>
             </tr>
           </thead>
 
@@ -44,8 +44,8 @@ export default async function DemandPage() {
                         {item.sku}
                     </Link>
                 </td>
-                <td className="p-4 font-mono">{item.quantity}</td>
-                <td className="p-4 text-right">{formatDate(item.dueDate)}</td>
+                <td className="p-4 font-mono">{item.quantityOpen}</td>
+                <td className="p-4 text-right">{formatDate(item.orderDate)}</td>
               </tr>
             ))}
           </tbody>

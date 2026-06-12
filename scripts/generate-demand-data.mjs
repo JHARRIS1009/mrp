@@ -1,6 +1,7 @@
 import fs from "fs";
 
-const inputPath = "data/Sales_Orders.csv";
+const salesOrdersPath = "data/Sales_Orders.csv";
+const itemsPath = "data/Items.csv";
 const outputPath = "lib/demand-data.ts";
 
 function parseCsv(text) {
@@ -45,24 +46,64 @@ function parseCsv(text) {
   return rows;
 }
 
+function rowsToRecords(rows) {
+  const headers = rows[0];
+  const dataRows = rows.slice(1);
+
+  return dataRows.map((row) =>
+    Object.fromEntries(
+      headers.map((header, index) => [header, row[index] ?? ""])
+    )
+  );
+}
+
 function parseNumber(value) {
   const number = Number(String(value ?? "").replace(/[^0-9.-]/g, ""));
   return Number.isFinite(number) ? number : 0;
 }
 
-const csv = fs.readFileSync(inputPath, "utf8");
-const rows = parseCsv(csv);
+function isTrue(value) {
+  return String(value ?? "").trim().toLowerCase() === "true";
+}
 
-const headers = rows[0];
-const dataRows = rows.slice(1);
+const itemsCsv = fs.readFileSync(itemsPath, "utf8");
+const itemRecords = rowsToRecords(parseCsv(itemsCsv));
 
-const records = dataRows.map((row) =>
-  Object.fromEntries(headers.map((header, index) => [header, row[index] ?? ""]))
+const inventorySkuSet = new Set(
+  itemRecords
+    .filter((item) => item.SKU?.trim())
+    .filter((item) => isTrue(item["Track Inventory"]))
+    .map((item) => item.SKU.trim())
 );
 
-const demandItems = records
+const salesOrdersCsv = fs.readFileSync(salesOrdersPath, "utf8");
+const salesOrderRecords = rowsToRecords(parseCsv(salesOrdersCsv));
+
+const demandItems = salesOrderRecords
   .filter((item) => item["SalesOrder Number"]?.trim())
   .filter((item) => item.SKU?.trim())
+  .filter((item) => {
+    const status = String(item.Status ?? "").trim().toLowerCase();
+    const customStatus = String(item["Custom Status"] ?? "").trim().toLowerCase();
+
+    return status !== "void" && customStatus !== "void";
+  })
+  .filter((item) => inventorySkuSet.has(item.SKU.trim()))
+  .filter((item) => {
+    const hasDropShipRecipient =
+      item["Deliver To Customer"]?.trim() ||
+      item["Recipient Address"]?.trim() ||
+      item["Recipient City"]?.trim() ||
+      item["Recipient State"]?.trim() ||
+      item["Recipient Country"]?.trim() ||
+      item["Recipient Postal Code"]?.trim();
+
+    const containsDFP = Object.values(item).some((value) =>
+      String(value).toUpperCase().includes("DFP")
+    );
+
+    return !hasDropShipRecipient && !containsDFP;
+  })
   .map((item) => {
     const quantityOrdered = parseNumber(item.QuantityOrdered);
     const quantityCancelled = parseNumber(item.QuantityCancelled);
@@ -113,4 +154,6 @@ export async function getDemandItemsByOrderNumber(orderNumber: string) {
 
 fs.writeFileSync(outputPath, output);
 
-console.log("Generated " + outputPath + " with " + demandItems.length + " demand lines.");
+console.log(
+  "Generated " + outputPath + " with " + demandItems.length + " demand lines."
+);

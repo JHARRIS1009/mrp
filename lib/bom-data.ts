@@ -1,19 +1,16 @@
+// Auto-generated from Zoho Books API.
+// Do not edit manually.
+
 export type BomLine = {
   parentSku: string;
   childSku: string;
   qtyPer: number;
 };
 
-export async function getBomLines(): Promise<BomLine[]> {
-  return [
+const bomLines: BomLine[] = [
   {
     "parentSku": "EZ1.11",
     "childSku": "EZ1.11M",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "EZ1.11",
-    "childSku": "EZ1.11P",
     "qtyPer": 1
   },
   {
@@ -22,18 +19,8 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "EZ1.2",
-    "childSku": "EZ1.2P",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "EZ1.3",
     "childSku": "EZ1.3M",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "EZ1.3",
-    "childSku": "EZ1.3P",
     "qtyPer": 1
   },
   {
@@ -277,88 +264,13 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "BX-3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "BX-5",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "EZ100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "GR700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "MT3500",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR20-EK7651H-EZ",
-    "childSku": "MT4502",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-G",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-G",
-    "childSku": "BX-5",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR20-EK7651H-G",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-G",
-    "childSku": "GR700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR20-EK7651H-G",
-    "childSku": "MT3500",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR20-EK7651H-G",
-    "childSku": "MT4502",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "GR4.1",
     "childSku": "GR4.1M-20A",
     "qtyPer": 1
   },
   {
-    "parentSku": "GR4.1",
-    "childSku": "GR4.1P",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "GR4.2",
     "childSku": "GR4.2M-20A",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR4.2",
-    "childSku": "GR4.2P",
     "qtyPer": 1
   },
   {
@@ -384,11 +296,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GR416",
     "childSku": "GRS11",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR416",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -474,11 +381,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GR457",
     "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR457",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -608,11 +510,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GR520",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR520",
     "childSku": "MT3500",
     "qtyPer": 1
   },
@@ -649,11 +546,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GR520EZ",
     "childSku": "GR457",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR520EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -748,11 +640,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GR600",
-    "childSku": "Labor30",
-    "qtyPer": 0.5
-  },
-  {
-    "parentSku": "GR600",
     "childSku": "MGR5",
     "qtyPer": 1
   },
@@ -784,261 +671,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GR600",
     "childSku": "MTB61-00",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR616",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR616",
-    "childSku": "BX-5",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR616",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR616",
-    "childSku": "GR600",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR616",
-    "childSku": "MT3400",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR616",
-    "childSku": "MT4400",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR620",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR620",
-    "childSku": "BX-5",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR620",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR620",
-    "childSku": "GR600",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR620",
-    "childSku": "MT3500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR620",
-    "childSku": "MT4500",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GRKM7681.6",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GRM76",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GRS1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GRS3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GRS4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "GRS6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "Labor30",
-    "qtyPer": 0.5
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "M1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "M1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT0825",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR700",
-    "childSku": "MTB45-76",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR716",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR716",
-    "childSku": "BX-5",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR716",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR716",
-    "childSku": "GR700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR716",
-    "childSku": "MT3400",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR716",
-    "childSku": "MT4402",
     "qtyPer": 1
   },
   {
@@ -1103,11 +735,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GR727",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR727",
     "childSku": "MT3700",
     "qtyPer": 1
   },
@@ -1144,11 +771,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GR727-NOEZ",
     "childSku": "GRS11",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR727-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -1189,266 +811,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GR8",
     "childSku": "MT0835",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GRKM7681.6",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GRM81",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GRS2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GRS3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GRS6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "GRS7",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "Labor30",
-    "qtyPer": 0.5
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "M1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "M1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT0825",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR800",
-    "childSku": "MTB81-00",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR816",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR816",
-    "childSku": "BX-5",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR816",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR816",
-    "childSku": "GR800",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR816",
-    "childSku": "MT3400",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR816",
-    "childSku": "MT4402",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR820",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR820",
-    "childSku": "BX-5",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GR820",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR820",
-    "childSku": "GR800",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR820",
-    "childSku": "MT3500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR820",
-    "childSku": "MT4502",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "BX-3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "BX-5",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "BX-6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "EZ100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "GR800",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "MT3700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GR827",
-    "childSku": "MT4702",
     "qtyPer": 1
   },
   {
@@ -1877,261 +1239,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "GREB400-MAK",
-    "childSku": "EZ1.3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "EZ2001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GGD01M1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT0004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT3400",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT4400",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT5000-MAK",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "EZ1.3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "EZ2001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR MISC",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT0004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT3400",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT4400",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT5000-MAK",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB400-MAK-NM",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "GREB500-GW",
     "childSku": "BX-4",
     "qtyPer": 1
@@ -2572,171 +1679,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "EZ1.3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "EZ2001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR MISC",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT0004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT3500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT4500-2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT5000-MAK",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GREB500-MAK-NM",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GRKM61.2-20A",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GRKM61.3-20A",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GRKM61.4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GRKM61.5",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GRKM61.6",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "GRKM61.8",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRKM61",
-    "childSku": "MT9601",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "GRTA-E400",
     "childSku": "E1000",
     "qtyPer": 1
@@ -2814,11 +1756,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-E400",
     "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E400",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -3019,11 +1956,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-E400-NOEZ",
     "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E400-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -3228,11 +2160,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-E500",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E500",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -3429,11 +2356,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-E500-NOEZ",
     "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E500-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -3634,11 +2556,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-E500EZ",
     "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E500EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -3853,11 +2770,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-E700",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E700",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -4053,11 +2965,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-E700-NOEZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E700-NOEZ",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -4249,11 +3156,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-E700EZ",
     "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-E700EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -4483,11 +3385,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-H400",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H400",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -4699,11 +3596,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-H400-NOEZ",
     "childSku": "H1002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H400-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -5148,11 +4040,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-H500-NOEZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500-NOEZ",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -5287,221 +4174,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "EZ100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GRS3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "H1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "H1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "H1002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0091",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0801",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0804",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0812",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT0865",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT3500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT4502",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT7500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT95192",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MT95197",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MTB77-00",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H500EZ",
-    "childSku": "MTB97-00",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "GRTA-H700",
     "childSku": "EZ100",
     "qtyPer": 1
@@ -5579,11 +4251,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-H700",
     "childSku": "H1002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H700",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -5798,11 +4465,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-H700-NOEZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H700-NOEZ",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -6004,11 +4666,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-H700EZ",
     "childSku": "H1002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-H700EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -6147,841 +4804,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "GRTA-M500",
-    "childSku": "EZ100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GRKM7681.6",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GRS11",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GRS17",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "M1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "M1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0091",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0804",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0812",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0825F",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT3500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT4500",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT7500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT95192",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MT95196",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MTB45-76",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500",
-    "childSku": "MTB81-00",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "EZ100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GRKM7681.6",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GRS3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "M1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "M1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0091",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0804",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0812",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT0865",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT3500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT4502",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT7500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT95016A",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT95192",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MT95197",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MTB45-76",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M500EZ",
-    "childSku": "MTB81-00",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "EZ100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GRKM7681.6",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GRS3",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "M1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "M1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0091",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0804",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0812",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT3700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT4700-2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT7700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT95192",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MT95197",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700",
-    "childSku": "MTB81-00",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR0.3.2",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR1.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GRKM7681.6",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GRS11",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GRS17",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "M1000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "M1001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0010",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0013",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0018",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0040",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0062",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0091",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0800",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0804",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0812",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0825F",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT0850",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT3700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT4004",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT4700",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT7700",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT9001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT9002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT9003",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT95192",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MT95197",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700-NOEZ",
-    "childSku": "MTB81-00",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "GRTA-M700EZ",
     "childSku": "EZ100",
     "qtyPer": 1
@@ -7044,11 +4866,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-M700EZ",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-M700EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -7254,11 +5071,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-MX400",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-MX400",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -7473,11 +5285,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-MX400-NOEZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-MX400-NOEZ",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -7684,11 +5491,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-MX500",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-MX500",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -7903,11 +5705,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-MX500-NOEZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-MX500-NOEZ",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -8109,11 +5906,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-MX500EZ",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-MX500EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -8333,11 +6125,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-S400",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S400",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -8564,11 +6351,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-S400-NOEZ",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S400-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -8803,11 +6585,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-S500",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S500",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -9034,11 +6811,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-S500-NOEZ",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S500-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -9264,11 +7036,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-S500EZ",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S500EZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -9508,11 +7275,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-S700",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S700",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -9739,11 +7501,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "GRTA-S700-NOEZ",
     "childSku": "GRTA-LIT-OM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S700-NOEZ",
-    "childSku": "Labor30",
     "qtyPer": 1
   },
   {
@@ -9978,11 +7735,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "GRTA-S700EZ",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "GRTA-S700EZ",
     "childSku": "MT0010",
     "qtyPer": 1
   },
@@ -10142,63 +7894,8 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "MGR5",
-    "childSku": "GR5.11",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "GR5.12",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "GR5.2",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "GR5.3",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "GR5.4",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "GR5.8",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "MGR5.1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "MT8001",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "MT8002",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MGR5",
-    "childSku": "MT8003",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "MGR5.1",
     "childSku": "MGR5.1M",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MGR5.1",
-    "childSku": "MGR5.1P",
     "qtyPer": 1
   },
   {
@@ -10437,46 +8134,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "MT4400",
-    "childSku": "Labor30",
-    "qtyPer": 0.25
-  },
-  {
-    "parentSku": "MT4400-2",
-    "childSku": "MT10105",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4400-2",
-    "childSku": "MT4400",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MT4400-24",
-    "childSku": "MT4400",
-    "qtyPer": 24
-  },
-  {
-    "parentSku": "MT4400-6",
-    "childSku": "MT1299",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4400-6",
-    "childSku": "MT4400",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "MT4402",
-    "childSku": "MT4400",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MT4402",
-    "childSku": "MT95015",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "MT4450",
     "childSku": "GR4.1",
     "qtyPer": 6
@@ -10495,11 +8152,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "parentSku": "MT4450",
     "childSku": "GR4.4",
     "qtyPer": 9
-  },
-  {
-    "parentSku": "MT4450",
-    "childSku": "Labor30",
-    "qtyPer": 0.5
   },
   {
     "parentSku": "MT4450",
@@ -10547,56 +8199,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "MT4500",
-    "childSku": "Labor30",
-    "qtyPer": 0.3
-  },
-  {
-    "parentSku": "MT4500-2",
-    "childSku": "MT10105",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4500-2",
-    "childSku": "MT4500",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MT4500-24",
-    "childSku": "MT4500",
-    "qtyPer": 24
-  },
-  {
-    "parentSku": "MT4500-6",
-    "childSku": "MT1299",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4500-6",
-    "childSku": "MT4500",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "MT4502",
-    "childSku": "MT4500",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MT4502",
-    "childSku": "MT95015",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4502-25",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4502-25",
-    "childSku": "MT4502",
-    "qtyPer": 25
-  },
-  {
     "parentSku": "MT4550",
     "childSku": "GR4.1",
     "qtyPer": 8
@@ -10615,11 +8217,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "parentSku": "MT4550",
     "childSku": "GR4.4",
     "qtyPer": 10
-  },
-  {
-    "parentSku": "MT4550",
-    "childSku": "Labor30",
-    "qtyPer": 0.5
   },
   {
     "parentSku": "MT4550",
@@ -10667,126 +8264,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "MT4700",
-    "childSku": "Labor30",
-    "qtyPer": 0.35
-  },
-  {
-    "parentSku": "MT4700-2",
-    "childSku": "MT10105",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4700-2",
-    "childSku": "MT4700",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MT4700-24",
-    "childSku": "MT4700",
-    "qtyPer": 24
-  },
-  {
-    "parentSku": "MT4700-6",
-    "childSku": "MT1299",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4700-6",
-    "childSku": "MT4700",
-    "qtyPer": 6
-  },
-  {
-    "parentSku": "MT4702",
-    "childSku": "MT4700",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "MT4702",
-    "childSku": "MT95015",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4702-25",
-    "childSku": "BX-4",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4702-25",
-    "childSku": "MT4702",
-    "qtyPer": 25
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "GR4.1",
-    "qtyPer": 15
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "GR4.2",
-    "qtyPer": 15
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "GR4.3.3",
-    "qtyPer": 30
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "GR4.4",
-    "qtyPer": 30
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "Labor30",
-    "qtyPer": 0.75
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "MT4003",
-    "qtyPer": 30
-  },
-  {
-    "parentSku": "MT4730",
-    "childSku": "MT95015",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "GR4.1",
-    "qtyPer": 15
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "GR4.2",
-    "qtyPer": 10
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "GR4.3",
-    "qtyPer": 20
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "GR4.4",
-    "qtyPer": 15
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "Labor30",
-    "qtyPer": 0.5
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "MT4002",
-    "qtyPer": 5
-  },
-  {
-    "parentSku": "MT4750",
-    "childSku": "MT95015",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "MT5000-MAK",
     "childSku": "GR MISC",
     "qtyPer": 20
@@ -10825,11 +8302,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "parentSku": "MT7208-2-4",
     "childSku": "MT7208-4",
     "qtyPer": 1
-  },
-  {
-    "parentSku": "MT7208-25-36",
-    "childSku": "MT7208-25",
-    "qtyPer": 4
   },
   {
     "parentSku": "MT7208-25-36",
@@ -11017,13 +8489,63 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "MT7400",
-    "childSku": "MT7401",
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-26",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-27",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-28",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-29",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-30",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-31",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-32",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-33",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-34",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-35",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "MT7208-PS",
+    "childSku": "MT7208-36",
     "qtyPer": 1
   },
   {
     "parentSku": "MT7400",
-    "childSku": "MT7502",
+    "childSku": "MT7401",
     "qtyPer": 1
   },
   {
@@ -11032,18 +8554,8 @@ export async function getBomLines(): Promise<BomLine[]> {
     "qtyPer": 1
   },
   {
-    "parentSku": "MT7500",
-    "childSku": "MT7502",
-    "qtyPer": 1
-  },
-  {
     "parentSku": "MT7700",
     "childSku": "MT7701",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "MT7700",
-    "childSku": "MT7702",
     "qtyPer": 1
   },
   {
@@ -11303,11 +8815,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "SB0250",
-    "childSku": "Labor30",
-    "qtyPer": 5
-  },
-  {
-    "parentSku": "SB0250",
     "childSku": "SB0101",
     "qtyPer": 0.05
   },
@@ -11373,11 +8880,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "SB0250",
-    "childSku": "SB0250P",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB0250",
     "childSku": "SB2150",
     "qtyPer": 1
   },
@@ -11389,16 +8891,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   {
     "parentSku": "SB0250",
     "childSku": "SB2152",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB0900",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB0900",
-    "childSku": "PD-1000",
     "qtyPer": 1
   },
   {
@@ -11415,16 +8907,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "parentSku": "SB0900",
     "childSku": "SB0120",
     "qtyPer": 0.116667
-  },
-  {
-    "parentSku": "SB1250*",
-    "childSku": "Labor30",
-    "qtyPer": 0.25
-  },
-  {
-    "parentSku": "SB1250*",
-    "childSku": "SB0118",
-    "qtyPer": 1
   },
   {
     "parentSku": "SB215",
@@ -11963,11 +9445,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "SB3200",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB3200",
     "childSku": "SB0107",
     "qtyPer": 0.016667
   },
@@ -12000,11 +9477,6 @@ export async function getBomLines(): Promise<BomLine[]> {
     "parentSku": "SB3600",
     "childSku": "SB3601",
     "qtyPer": 1
-  },
-  {
-    "parentSku": "SB3601",
-    "childSku": "Labor30",
-    "qtyPer": 0.25
   },
   {
     "parentSku": "SB3601",
@@ -12128,22 +9600,12 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "SB431-AB",
-    "childSku": "GR-LIT-WP",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB431-AB",
     "childSku": "MT0004",
     "qtyPer": 1
   },
   {
     "parentSku": "SB431-AB",
     "childSku": "MT0099",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB431-AB",
-    "childSku": "SB-LIT-OM",
     "qtyPer": 1
   },
   {
@@ -12448,11 +9910,6 @@ export async function getBomLines(): Promise<BomLine[]> {
   },
   {
     "parentSku": "SB9050",
-    "childSku": "Labor30",
-    "qtyPer": 0.25
-  },
-  {
-    "parentSku": "SB9050",
     "childSku": "SB0108",
     "qtyPer": 0.027778
   },
@@ -12520,401 +9977,21 @@ export async function getBomLines(): Promise<BomLine[]> {
     "parentSku": "SBCK216",
     "childSku": "SBACCBAG",
     "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "GGD01M1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "GREB400-MAK-NM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB0250",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB1000",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB1500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB3600",
-    "qtyPer": 8
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB9000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB9100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SB9200",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SBACCBAG",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4215e",
-    "childSku": "SBBOX1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "GGD01M1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "GREB400-MAK-NM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SB0250",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SB2000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SB3200",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SB4000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SB9100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SB9200",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SBACCBAG",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4216e",
-    "childSku": "SBBOX1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "GGD01M1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "GREB400-MAK-NM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "Labor30",
-    "qtyPer": 1.5
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB0250",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB1000",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB1500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB2000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB3200",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB3600",
-    "qtyPer": 8
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB4000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB9000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB9100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SB9200",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SBACCBAG",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-4431e",
-    "childSku": "SBBOX1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "GREB500-MAK-NM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB0250",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB1000",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB1500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB3600",
-    "qtyPer": 8
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB9000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB9100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SB9200",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SBACCBAG",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5215e",
-    "childSku": "SBBOX1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "GGD01M1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "GREB500-MAK-NM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "Labor30",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SB0250",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SB2000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SB3200",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SB4000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SB9100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SB9200",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SBACCBAG",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5216e",
-    "childSku": "SBBOX1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "GGD01M1",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "GREB500-MAK-NM",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "Labor30",
-    "qtyPer": 1.5
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "MT8008",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB0250",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB1000",
-    "qtyPer": 2
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB1500",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB2000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB3200",
-    "qtyPer": 3
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB3600",
-    "qtyPer": 8
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB4000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB9000",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB9100",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SB9200",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SBACCBAG",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SBGR-5431e",
-    "childSku": "SBBOX1",
-    "qtyPer": 1
   }
 ];
+
+export async function getBomLines(): Promise<BomLine[]> {
+  return bomLines;
+}
+
+export async function getBomLinesByParentSku(
+  parentSku: string
+): Promise<BomLine[]> {
+  return bomLines.filter((line) => line.parentSku === parentSku);
+}
+
+export async function getBomLinesByChildSku(
+  childSku: string
+): Promise<BomLine[]> {
+  return bomLines.filter((line) => line.childSku === childSku);
 }

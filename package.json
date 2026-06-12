@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "zoho:auth": "tsx scripts/test-zoho-auth.mjs",
+    "zoho:fetch-sales-orders": "tsx scripts/fetch-all-sales-orders.mjs",
+    "generate:demand": "tsx scripts/generate-demand-data-from-zoho.mjs",
+    "generate:inventory": "tsx scripts/generate-inventory-data-from-zoho.mjs",
+    "generate:purchase-orders": "tsx scripts/generate-purchase-orders-data-from-zoho.mjs",
+    "generate:bom": "tsx scripts/generate-bom-data-from-zoho.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
@@ -18,9 +24,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }

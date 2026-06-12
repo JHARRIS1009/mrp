@@ -1,6 +1,49 @@
 import { notFound } from "next/navigation";
 import { getDemandItemsByOrderNumber } from "@/lib/demand-data";
+import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
+
+function getAgeInfo(orderDate: string) {
+  if (!orderDate) {
+    return {
+      text: "Unknown",
+      className: "text-slate-300",
+    };
+  }
+
+  const orderTime = new Date(orderDate).getTime();
+  const now = Date.now();
+
+  if (!Number.isFinite(orderTime)) {
+    return {
+      text: "Unknown",
+      className: "text-slate-300",
+    };
+  }
+
+  const days = Math.floor((now - orderTime) / (1000 * 60 * 60 * 24));
+  const weeks = Math.floor(days / 7);
+
+  let text: string;
+
+  if (days <= 0) {
+    text = "Today";
+  } else if (days < 7) {
+    text = `${days} day${days === 1 ? "" : "s"} old`;
+  } else {
+    text = `${weeks} week${weeks === 1 ? "" : "s"} / ${days} days old`;
+  }
+
+  let className = "text-white";
+
+  if (days >= 28) {
+    className = "text-red-400";
+  } else if (days >= 7) {
+    className = "text-yellow-400";
+  }
+
+  return { text, className };
+}
 
 export default async function DemandDetailPage({
   params,
@@ -17,6 +60,8 @@ export default async function DemandDetailPage({
 
   const firstLine = demandItems[0];
 
+  const ageInfo = getAgeInfo(firstLine.orderDate);
+
   return (
     <section>
       <h1 className="text-3xl font-bold">Sales Order {orderNumber}</h1>
@@ -28,7 +73,15 @@ export default async function DemandDetailPage({
         </div>
 
         <div className="mt-2">
-          <span className="font-semibold">Due Date:</span> {firstLine.dueDate}
+          <span className="font-semibold">Sales Order Date:</span>{" "}
+          {formatDate(firstLine.orderDate)}
+        </div>
+
+        <div className="mt-2">
+          <span className="font-semibold">Age:</span>{" "}
+          <span className={ageInfo.className}>
+            {ageInfo.text}
+          </span>
         </div>
       </div>
 
@@ -42,17 +95,20 @@ export default async function DemandDetailPage({
           </thead>
 
           <tbody>
-            {demandItems.map((item) => (
-              <tr key={`${item.orderNumber}-${item.sku}`} className="border-t border-slate-800">
+            {demandItems.map((item, index) => (
+              <tr
+                key={`${item.orderNumber}-${item.sku}-${index}`}
+                className="border-t border-slate-800"
+              >
                 <td className="p-4 font-mono">
-                    <Link 
-                        href={`/items/${encodeURIComponent(item.sku)}`}
-                        className="hover:underline"
-                    >
-                        {item.sku}
-                    </Link>
+                  <Link
+                    href={`/items/${encodeURIComponent(item.sku)}`}
+                    className="hover:underline"
+                  >
+                    {item.sku}
+                  </Link>
                 </td>
-                <td className="p-4 text-right">{item.quantity}</td>
+                <td className="p-4 text-right">{item.quantityOpen}</td>
               </tr>
             ))}
           </tbody>

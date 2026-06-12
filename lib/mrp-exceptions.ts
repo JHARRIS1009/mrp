@@ -20,26 +20,26 @@ export async function calculateMrpExceptions(): Promise<MrpException[]> {
   for (const shortage of shortages) {
     const projectedEvents = await calculateProjectedInventory(shortage.sku);
 
-    const projectedValues = projectedEvents.map(
-      (event) => event.projectedAvailable
-    );
+    const projectedValues = projectedEvents
+      .map((event) => Number(event.projectedAvailable))
+      .filter((value) => Number.isFinite(value));
 
     const lowestProjectedAvailable =
       projectedValues.length > 0
         ? Math.min(...projectedValues)
-        : shortage.available;
+        : shortage.projectedAvailable;
 
     if (shortage.shortage > 0) {
-        exceptions.push({
-            sku: shortage.sku,
-            type: "Current Shortage",
-            grossRequired: shortage.required,
-            available: shortage.available,
-            incoming: shortage.incoming,
-            netRequired: shortage.netRequired,
-            currentShortage: shortage.shortage,
-            lowestProjectedAvailable,
-        });
+      exceptions.push({
+        sku: shortage.sku,
+        type: "Current Shortage",
+        grossRequired: shortage.required,
+        available: shortage.available,
+        incoming: shortage.incoming,
+        netRequired: shortage.netRequired,
+        currentShortage: shortage.shortage,
+        lowestProjectedAvailable,
+      });
     } else if (lowestProjectedAvailable < 0) {
       exceptions.push({
         sku: shortage.sku,
