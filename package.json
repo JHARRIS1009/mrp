@@ -12,7 +12,8 @@
     "generate:demand": "tsx scripts/generate-demand-data-from-zoho.mjs",
     "generate:inventory": "tsx scripts/generate-inventory-data-from-zoho.mjs",
     "generate:purchase-orders": "tsx scripts/generate-purchase-orders-data-from-zoho.mjs",
-    "generate:bom": "tsx scripts/generate-bom-data-from-zoho.mjs"
+    "generate:bom": "tsx scripts/generate-bom-data-from-zoho.mjs",
+    "generate:all": "npm run generate:inventory && npm run generate:demand && npm run generate:purchase-orders && npm run generate:bom"
   },
   "dependencies": {
     "next": "16.2.6",
