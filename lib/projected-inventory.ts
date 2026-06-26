@@ -1,7 +1,7 @@
-import { getInventoryItems } from "@/lib/inventory-data";
+import { getInventoryItems } from "@/lib/data/inventory";
 import { calculateShortageTrace } from "@/lib/mrp";
-import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
-import { getDemandItems } from "@/lib/demand-data";
+import { getPurchaseOrderLinesBySku } from "@/lib/data/purchase-orders";
+import { getDemandItems } from "@/lib/data/demand";
 
 export type ProjectedInventoryEvent = {
   date: string;

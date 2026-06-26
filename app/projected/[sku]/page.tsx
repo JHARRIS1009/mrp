@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { calculateProjectedInventory } from "@/lib/projected-inventory";
-import { getInventoryItems } from "@/lib/inventory-data";
+import { getInventoryItems } from "@/lib/data/inventory";
 import { formatDate } from "@/lib/date-utils";
 import BackButton from "@/components/BackButton";
 

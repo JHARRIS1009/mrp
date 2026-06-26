@@ -1,5 +1,5 @@
-import { getBomLines } from "@/lib/bom-data";
-import { getInventoryItems } from "@/lib/inventory-data";
+import { getBomLines } from "@/lib/data/bom";
+import { getInventoryItems } from "@/lib/data/inventory";
 
 export async function calculateCanBuild() {
   const inventoryItems = await getInventoryItems();

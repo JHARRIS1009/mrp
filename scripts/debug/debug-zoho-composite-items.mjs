@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
 import { writeFileSync } from "node:fs";
-import { zohoGet } from "../lib/zoho/client.ts";
+import { zohoGet } from "../../lib/zoho/client.ts";
 
 const data = await zohoGet("/compositeitems", {
   page: 1,

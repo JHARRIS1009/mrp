@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { calculateShortageTrace, calculateShortages } from "@/lib/mrp";
-import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
+import { getPurchaseOrderLinesBySku } from "@/lib/data/purchase-orders";
 import { formatDate } from "@/lib/date-utils";
 import BackButton from "@/components/BackButton";
 

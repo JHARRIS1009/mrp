@@ -1,4 +1,4 @@
-import { getInventoryItems } from "@/lib/inventory-data";
+import { getInventoryItems } from "@/lib/data/inventory";
 import NavBar from "@/components/NavBar";
 import Link from "next/link";
 

@@ -1,4 +1,4 @@
-import { getPurchaseOrderLines } from "@/lib/purchase-orders-data";
+import { getPurchaseOrderLines } from "@/lib/data/purchase-orders";
 import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDemandItemsByOrderNumber } from "@/lib/demand-data";
+import { getDemandItemsByOrderNumber } from "@/lib/data/demand";
 import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 

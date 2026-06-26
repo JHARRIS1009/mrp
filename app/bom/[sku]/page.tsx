@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBomLines } from "@/lib/bom-data";
+import { getBomLines } from "@/lib/data/bom";
 import BackButton from "@/components/BackButton";
 
 export default async function BomDetailPage({

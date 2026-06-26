@@ -53,6 +53,13 @@ const inventoryItems: InventoryItem[] = [
     "allocated": 0
   },
   {
+    "sku": "140831-6",
+    "description": "TANK CAP CPL., EK7651H",
+    "onHand": 1,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
     "sku": "140F77-0",
     "description": "Damping Spring CPL EK6101",
     "onHand": 0,
@@ -62,7 +69,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "141S89-4",
     "description": "BEARING RETAINER 32-43 CPL - GGD01",
-    "onHand": 70,
+    "onHand": 69,
     "incoming": 0,
     "allocated": 0
   },
@@ -90,7 +97,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "143450-7",
     "description": "Flywheel CPL EK6101",
-    "onHand": 1,
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
@@ -158,9 +165,16 @@ const inventoryItems: InventoryItem[] = [
     "allocated": 0
   },
   {
+    "sku": "168507-3",
+    "description": "TANK CAP CPL., EK8100",
+    "onHand": 1,
+    "incoming": 0,
+    "allocated": 1
+  },
+  {
     "sku": "168510-4",
     "description": "Clutch EK6101",
-    "onHand": 0,
+    "onHand": 3,
     "incoming": 0,
     "allocated": 0
   },
@@ -223,7 +237,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "20GR3.1",
     "description": "20\" Digging Bar",
-    "onHand": 868,
+    "onHand": 821,
     "incoming": 0,
     "allocated": 0
   },
@@ -244,7 +258,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "212133-1",
     "description": "NEEDLE CAGE, EA7900",
-    "onHand": 0,
+    "onHand": 1,
     "incoming": 0,
     "allocated": 0
   },
@@ -328,7 +342,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "234388-8",
     "description": "RETAINING RING 32X1.2 EK6101",
-    "onHand": 0,
+    "onHand": 1,
     "incoming": 0,
     "allocated": 0
   },
@@ -461,7 +475,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "27GR3.1",
     "description": "27\" Digging Bar",
-    "onHand": 610,
+    "onHand": 592,
     "incoming": 0,
     "allocated": 0
   },
@@ -559,14 +573,14 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "326623-9",
     "description": "Axle 20.0 - EK6101",
-    "onHand": -1,
+    "onHand": 9,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "327C19-5",
     "description": "SPINDLE - GGD01",
-    "onHand": 69,
+    "onHand": 68,
     "incoming": 0,
     "allocated": 0
   },
@@ -574,6 +588,13 @@ const inventoryItems: InventoryItem[] = [
     "sku": "346457-4",
     "description": "Belt Tension Plate EK7651H EK8100",
     "onHand": 7,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
+    "sku": "346589-7",
+    "description": "MUFFLER GUARD, EK7651H",
+    "onHand": 1,
     "incoming": 0,
     "allocated": 0
   },
@@ -699,7 +720,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "424789-0",
     "description": "Air Filter EK6101",
-    "onHand": 6,
+    "onHand": 5,
     "incoming": 0,
     "allocated": 0
   },
@@ -727,7 +748,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "455559-6",
     "description": "CLUTCH COVER, EK7651H",
-    "onHand": 0,
+    "onHand": 1,
     "incoming": 0,
     "allocated": 0
   },
@@ -804,28 +825,28 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "BX-3",
     "description": "Large GeoRipper Box \"B\"",
-    "onHand": 15,
+    "onHand": 2,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "BX-4",
     "description": "Small GeoRipper Box \"A\"",
-    "onHand": 136,
+    "onHand": 76,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 3
   },
   {
     "sku": "BX-5",
     "description": "GeoRipper Box \"Stabilizer\"",
-    "onHand": 515,
+    "onHand": 361,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "BX-6",
     "description": "GeoRipper Box Tray",
-    "onHand": 181,
+    "onHand": 110,
     "incoming": 0,
     "allocated": 0
   },
@@ -867,7 +888,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ1.1",
     "description": "EZ Kart - Axle",
-    "onHand": 54,
+    "onHand": 18,
     "incoming": 0,
     "allocated": 0
   },
@@ -916,21 +937,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ1.10",
     "description": "EZ Kart - Handle Spring",
-    "onHand": 122,
+    "onHand": 84,
     "incoming": 0,
     "allocated": 20
   },
   {
     "sku": "EZ1.11",
     "description": "EZ Kart - Locking Bar6.2",
-    "onHand": 125,
+    "onHand": 89,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ1.11.1",
     "description": "3mm X 14mm Slotted Spring Pin (ISO 8752) A2 Stainless Steel",
-    "onHand": 593,
+    "onHand": 557,
     "incoming": 0,
     "allocated": 0
   },
@@ -944,28 +965,28 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ1.12",
     "description": "EZ Kart - Snap Pin for Kart Handle",
-    "onHand": 181,
+    "onHand": 144,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ1.13",
     "description": "EZ Kart - Lynch Pin for Axle",
-    "onHand": 492,
+    "onHand": 420,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ1.16",
     "description": "EZ Kart - Pipe Lynch Pin",
-    "onHand": 1688,
+    "onHand": 1652,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ1.2",
     "description": "EZ Kart - Lower Handle",
-    "onHand": 71,
+    "onHand": 35,
     "incoming": 0,
     "allocated": 0
   },
@@ -979,7 +1000,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ1.3",
     "description": "EZ Kart - Upper Handle",
-    "onHand": 53,
+    "onHand": 17,
     "incoming": 0,
     "allocated": 0
   },
@@ -993,23 +1014,23 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ1.9",
     "description": "EZ Kart - Wheel",
-    "onHand": 444,
+    "onHand": 372,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ1.9.1",
     "description": "EZ Kart - Axle Wheel Hub",
-    "onHand": 49,
+    "onHand": 37,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ100",
     "description": "GeoRipper Minitrencher Universal EZ Kart",
-    "onHand": 2,
+    "onHand": 15,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 5
   },
   {
     "sku": "EZ100SN",
@@ -1028,42 +1049,42 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ2001",
     "description": "EZ Kart - Handle Grip",
-    "onHand": 486,
+    "onHand": 450,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ2002",
     "description": "EZ Kart - Upper Throttle Lever",
-    "onHand": 443,
+    "onHand": 407,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ3.4",
     "description": "EZ Kart - Lower Throttle - Velcro Strap",
-    "onHand": 99,
+    "onHand": 68,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ3.5",
     "description": "EZ Kart - Lower Throttle - Reset Spring",
-    "onHand": 161,
+    "onHand": 130,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ3.6",
     "description": "EZ Kart - Lower Throttle - M4 X .7 X 35 Phillips Pan Machine Screw",
-    "onHand": 76,
+    "onHand": 545,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ3.7",
     "description": "EZ Kart - Lower Throttle - M4 Nylon Locking Nut",
-    "onHand": 709,
+    "onHand": 1178,
     "incoming": 0,
     "allocated": 0
   },
@@ -1077,7 +1098,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ3001",
     "description": "EZ Kart - Throttle Cable",
-    "onHand": 286,
+    "onHand": 250,
     "incoming": 0,
     "allocated": 0
   },
@@ -1091,14 +1112,14 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ4005",
     "description": "EZ Kart Axle - Clamp A",
-    "onHand": 248,
+    "onHand": 212,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ4006",
     "description": "EZ Kart Axle - Clamp B",
-    "onHand": 259,
+    "onHand": 223,
     "incoming": 0,
     "allocated": 0
   },
@@ -1112,35 +1133,35 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "EZ6",
     "description": "EZ Kart - Lower Throttle Assembly",
-    "onHand": 5,
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ6.1",
     "description": "EZ Kart Lower Throttle Housing",
-    "onHand": 491,
+    "onHand": 460,
     "incoming": 0,
-    "allocated": 490
+    "allocated": 390
   },
   {
     "sku": "EZ6.2",
     "description": "EZ Kart Lower Throttle Lever",
-    "onHand": 776,
+    "onHand": 745,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ6.3",
     "description": "EZ KART - Lower Throttle Housing Index",
-    "onHand": 244,
+    "onHand": 213,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "EZ6000",
     "description": "EZ Kart - Pull Strap Assembly",
-    "onHand": 569,
+    "onHand": 533,
     "incoming": 0,
     "allocated": 0
   },
@@ -1168,9 +1189,9 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GGD01M1",
     "description": "Makita 40V max XGT BL Earth Auger Kit",
-    "onHand": 5,
+    "onHand": 3,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "GR MISC",
@@ -1182,7 +1203,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR-1000",
     "description": "GeoRipper Adapter",
-    "onHand": 86,
+    "onHand": 22,
     "incoming": 0,
     "allocated": 0
   },
@@ -1203,7 +1224,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR-LIT-OM",
     "description": "GeoRipper Owner's Manual",
-    "onHand": 1016,
+    "onHand": 952,
     "incoming": 0,
     "allocated": 0
   },
@@ -1224,7 +1245,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR-LIT-TB",
     "description": "GeoRipper Tri-Fold Brochures",
-    "onHand": 3435,
+    "onHand": 3385,
     "incoming": 0,
     "allocated": 0
   },
@@ -1245,42 +1266,42 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR-LIT-WP",
     "description": "GeoRipper Warranty Postcard",
-    "onHand": 1464,
+    "onHand": 1393,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR0.1",
     "description": "Bar End Plate - Threaded",
-    "onHand": 259,
+    "onHand": 685,
     "incoming": 0,
-    "allocated": 200
+    "allocated": 700
   },
   {
     "sku": "GR0.2",
     "description": "Bar End Plate - Countersunk",
-    "onHand": 265,
+    "onHand": 691,
     "incoming": 0,
-    "allocated": 200
+    "allocated": 700
   },
   {
     "sku": "GR0.3.2",
     "description": "M8x1.25x20 Countersunk 5mm Hex Drive Bolt 12.9grade",
-    "onHand": 589,
+    "onHand": 160,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR1.1",
     "description": "6 Tooth Nose Sprocket",
-    "onHand": -16,
+    "onHand": 984,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1000
   },
   {
     "sku": "GR1.2",
     "description": "Bearing (Sealed) 6002-RS2",
-    "onHand": 1083,
+    "onHand": 925,
     "incoming": 0,
     "allocated": 0
   },
@@ -1294,7 +1315,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR2.1",
     "description": "11 Tooth Nose Sprocket",
-    "onHand": 625,
+    "onHand": 536,
     "incoming": 0,
     "allocated": 0
   },
@@ -1350,14 +1371,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR416",
     "description": "The GeoRipper 16",
-    "onHand": 3,
+    "onHand": 2,
     "incoming": 0,
     "allocated": 1
   },
   {
+    "sku": "GR416EZ",
+    "description": "The GeoRipper 16 w/ EZ Kart",
+    "onHand": 0,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
     "sku": "GR457",
     "description": "The GeoRipper Engine",
-    "onHand": 3,
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
@@ -1371,51 +1399,51 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR5.11",
     "description": "M5 Nylock hex nut",
-    "onHand": 2368,
+    "onHand": 7954,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR5.12",
     "description": "M5 x 18mm fender washer",
-    "onHand": 1530,
+    "onHand": 2164,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR5.2",
     "description": "Bar Clamp Washer - Slotted",
-    "onHand": 597,
+    "onHand": 506,
     "incoming": 0,
-    "allocated": 550
+    "allocated": 350
   },
   {
     "sku": "GR5.3",
     "description": "M12 X 1.75 X 30 Bolt 18mm Head",
-    "onHand": 3548,
+    "onHand": 3368,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR5.4",
     "description": "M12 Split Lock Washer",
-    "onHand": 3339,
+    "onHand": 3159,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR5.8",
     "description": "M5 X .8 X 16 Phillips Flat Machine Screw Plated",
-    "onHand": 1875,
+    "onHand": 6057,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR520",
     "description": "The GeoRipper 20",
-    "onHand": 1,
+    "onHand": 15,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 11
   },
   {
     "sku": "GR520EZ",
@@ -1441,42 +1469,42 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GR727",
     "description": "The GeoRipper 27 Includes EZ Kart",
-    "onHand": 1,
+    "onHand": 2,
     "incoming": 0,
     "allocated": 1
   },
   {
     "sku": "GR727-NOEZ",
     "description": "The GeoRipper 27",
-    "onHand": 10,
+    "onHand": 5,
     "incoming": 0,
-    "allocated": 2
+    "allocated": 1
   },
   {
     "sku": "GR8",
     "description": "Chain Tensioning Block Assembly",
-    "onHand": 70,
+    "onHand": 4,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR8.1-21A",
     "description": "Chain Tension Block",
-    "onHand": 103,
+    "onHand": 603,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 200
   },
   {
     "sku": "GR8.3",
     "description": "M6 X 1 X 30 Hex Bolt",
-    "onHand": 723,
+    "onHand": 1755,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "GR8.4",
     "description": "M6 X 1 Nylon Insert Locking Nut",
-    "onHand": 696,
+    "onHand": 4588,
     "incoming": 0,
     "allocated": 0
   },
@@ -1553,7 +1581,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRKM61.3-20A",
     "description": "Labyrinth 6 Series",
-    "onHand": 242,
+    "onHand": 240,
     "incoming": 0,
     "allocated": 0
   },
@@ -1581,7 +1609,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRKM61.8",
     "description": "M8x1.25 Nylon Insert Locking Nut",
-    "onHand": 275,
+    "onHand": 274,
     "incoming": 0,
     "allocated": 0
   },
@@ -1602,7 +1630,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRKM7681.6",
     "description": "M8 X 1.25 Flanged Nyloc Nut",
-    "onHand": 616,
+    "onHand": 3409,
     "incoming": 0,
     "allocated": 0
   },
@@ -1637,7 +1665,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRS11",
     "description": "Sticker - Hand Entanglement/Chain Drive",
-    "onHand": 945,
+    "onHand": 873,
     "incoming": 0,
     "allocated": 0
   },
@@ -1679,7 +1707,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRS17",
     "description": "Dirt Deflector Warning Sticker",
-    "onHand": 935,
+    "onHand": 866,
     "incoming": 0,
     "allocated": 0
   },
@@ -1728,7 +1756,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRS8",
     "description": "Sticker - EZ Kart Warning",
-    "onHand": 176,
+    "onHand": 140,
     "incoming": 0,
     "allocated": 0
   },
@@ -1847,7 +1875,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRTA-LIT-OM",
     "description": "Owners Manual - GeoRipperT/A",
-    "onHand": 261,
+    "onHand": 256,
     "incoming": 0,
     "allocated": 0
   },
@@ -1896,9 +1924,9 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "GRTA-S400",
     "description": "GeoRipper(R)T/A S400 W/ EZ Kart",
-    "onHand": 1,
+    "onHand": 0,
     "incoming": 0,
-    "allocated": 1
+    "allocated": 0
   },
   {
     "sku": "GRTA-S400-NOEZ",
@@ -1987,21 +2015,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "H1000",
     "description": "Husqvarna T/A Casting",
-    "onHand": 170,
+    "onHand": 169,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "H1001",
     "description": "Pulley for 'The GeoRipper' & Husqvarna K770 GeoRipperT/A",
-    "onHand": 704,
+    "onHand": 628,
     "incoming": 0,
     "allocated": 300
   },
   {
     "sku": "H1002",
     "description": "Pulley for Husqvarna K970 GeoRipperT/A",
-    "onHand": 283,
+    "onHand": 275,
     "incoming": 0,
     "allocated": 0
   },
@@ -2043,42 +2071,42 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT0004",
     "description": "4mm Hex Key \"L\" tool",
-    "onHand": 57,
+    "onHand": 55,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0010",
     "description": "Spacer",
-    "onHand": 7305,
+    "onHand": 7236,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0011",
     "description": "Wire retainer Stihl 500i",
-    "onHand": 11,
+    "onHand": 8,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0012",
     "description": "Belt cover plug Stihl T/A",
-    "onHand": 11,
+    "onHand": 5,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0013",
     "description": "13mm Embossed Wrench",
-    "onHand": 1845,
+    "onHand": 1776,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0014",
     "description": "Belt tensioner cap Stihl T/A",
-    "onHand": 21,
+    "onHand": 18,
     "incoming": 0,
     "allocated": 0
   },
@@ -2092,35 +2120,35 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT0018",
     "description": "18mm Embossed Wrench",
-    "onHand": 930,
+    "onHand": 861,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0040",
     "description": "R40 Snap Ring",
-    "onHand": 684,
+    "onHand": 615,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0062",
     "description": "Bearing - 6203 RS",
-    "onHand": 727,
+    "onHand": 589,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0091",
     "description": "Foam Insert - GeoRipperT/A Box",
-    "onHand": 78,
+    "onHand": 73,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0099",
     "description": "Green PVC Tool Bag",
-    "onHand": 434,
+    "onHand": 363,
     "incoming": 0,
     "allocated": 0
   },
@@ -2134,49 +2162,49 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT0800",
     "description": "M8 Zinc Plated Washer",
-    "onHand": 4384,
+    "onHand": 4172,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0801",
     "description": "M8 Acorn Nut",
-    "onHand": 551,
+    "onHand": 548,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0802",
     "description": "M8 x 1.25 Hex Nut",
-    "onHand": 1714,
+    "onHand": 1711,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0803",
     "description": "M8 x 1.25 Square Nut",
-    "onHand": 320,
+    "onHand": 317,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0804",
     "description": "M8 split lock washer zinc plated",
-    "onHand": 761,
+    "onHand": 1623,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0812",
     "description": "M8 x 1.25 x 12 Bolt for Safety Bar",
-    "onHand": 1034,
+    "onHand": 1733,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0822",
     "description": "S1000 TENSION NUT RETAINING SCREWS",
-    "onHand": 504,
+    "onHand": 498,
     "incoming": 0,
     "allocated": 0
   },
@@ -2190,7 +2218,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT0825F",
     "description": "M8-1.25 X 25 UNC HEX HEAD FLANGE BOLT GRADE 10.9",
-    "onHand": 626,
+    "onHand": 1477,
     "incoming": 0,
     "allocated": 0
   },
@@ -2204,7 +2232,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT0840",
     "description": "M8-1.25 X 40 UNC HEX CAP SCREW ZP",
-    "onHand": 171,
+    "onHand": 170,
     "incoming": 0,
     "allocated": 0
   },
@@ -2218,23 +2246,23 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT0865",
     "description": "M8 x 1.25 x 65 Zinc-Plated Hex Bolt",
-    "onHand": 266,
+    "onHand": 66,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT0870",
     "description": "S1000 belt tension bolt",
-    "onHand": 425,
+    "onHand": 422,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT1000",
     "description": "GeoRipper Trencher Bar End Set",
-    "onHand": 0,
+    "onHand": 4,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "MT10104",
@@ -2246,37 +2274,37 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT10105",
     "description": "10 x 10 x 5 Uline Box",
-    "onHand": 117,
+    "onHand": 94,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 2
   },
   {
     "sku": "MT1299",
     "description": "12 x 9 x 9 Uline Box",
-    "onHand": 149,
+    "onHand": 140,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "MT1500",
     "description": "GeoRipper Minitrencher 6-Tooth Nose Sprocket with Bearing",
-    "onHand": 69,
+    "onHand": 39,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT1700",
     "description": "GeoRipper Minitrencher 11-Tooth Nose Sprocket with Bearing",
-    "onHand": 11,
+    "onHand": 20,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT2000",
     "description": "GeoRipper Trencher Bar Clamp Assembly",
-    "onHand": 0,
+    "onHand": 2,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "MT24104",
@@ -2288,7 +2316,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT24124",
     "description": "24 x 12 x 4",
-    "onHand": 64,
+    "onHand": 62,
     "incoming": 0,
     "allocated": 0
   },
@@ -2302,30 +2330,30 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT3400",
     "description": "Complete 16\" Digging Bar",
-    "onHand": 33,
+    "onHand": 20,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT3500",
     "description": "GeoRipper Minitrencher 20-Inch Digging Bar",
-    "onHand": 29,
+    "onHand": 20,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT361004",
     "description": "36x10x4 Box - Uline",
-    "onHand": 25,
+    "onHand": 23,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT3700",
     "description": "GeoRipper Minitrencher 27-Inch Digging Bar",
-    "onHand": 22,
+    "onHand": 24,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 3
   },
   {
     "sku": "MT4002",
@@ -2344,7 +2372,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT4004",
     "description": "#50H Heavy Connecting Link Spring Clip",
-    "onHand": 528,
+    "onHand": 447,
     "incoming": 0,
     "allocated": 0
   },
@@ -2372,35 +2400,35 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT4400",
     "description": "16\" Digging Chain (Single Chain)",
-    "onHand": 79,
+    "onHand": 47,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 8
   },
   {
     "sku": "MT4450",
     "description": "16\" Wide Digging Chain (Single)",
-    "onHand": 2,
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT4500",
     "description": "20\" Digging Chain (Single Chain)",
-    "onHand": 492,
+    "onHand": 283,
     "incoming": 0,
-    "allocated": 22
+    "allocated": 0
   },
   {
     "sku": "MT4550",
     "description": "GeoRipper Minitrencher 20\" Wide Digging Chain",
-    "onHand": 11,
+    "onHand": 6,
     "incoming": 0,
-    "allocated": 1
+    "allocated": 0
   },
   {
     "sku": "MT4700",
     "description": "27\" Digging Chain (Single Chain)",
-    "onHand": 164,
+    "onHand": 101,
     "incoming": 0,
     "allocated": 0
   },
@@ -2421,7 +2449,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208",
     "description": "MT7208S - Georipper Engine",
-    "onHand": 628,
+    "onHand": 563,
     "incoming": 0,
     "allocated": 499
   },
@@ -2470,7 +2498,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208-109",
     "description": "Air filter",
-    "onHand": 37,
+    "onHand": 27,
     "incoming": 0,
     "allocated": 0
   },
@@ -2708,16 +2736,16 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208-25",
     "description": "Hexagon socket head combination screw M5*25",
-    "onHand": 372,
+    "onHand": 366,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT7208-25-36",
     "description": "Pull Start Ass'y MT7208",
-    "onHand": 137,
+    "onHand": 123,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 2
   },
   {
     "sku": "MT7208-26",
@@ -2806,21 +2834,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208-37",
     "description": "Shroud",
-    "onHand": 23,
+    "onHand": 22,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT7208-38",
     "description": "Hexagon socket head combination screw M5*20",
-    "onHand": 427,
+    "onHand": 426,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT7208-39",
     "description": "Ignition coil",
-    "onHand": 12,
+    "onHand": 11,
     "incoming": 0,
     "allocated": 0
   },
@@ -3114,7 +3142,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208-74",
     "description": "Double hole intake pipe",
-    "onHand": 349,
+    "onHand": 334,
     "incoming": 0,
     "allocated": 0
   },
@@ -3123,7 +3151,7 @@ const inventoryItems: InventoryItem[] = [
     "description": "Negative pressure pipe",
     "onHand": 18,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 2
   },
   {
     "sku": "MT7208-76",
@@ -3144,7 +3172,7 @@ const inventoryItems: InventoryItem[] = [
     "description": "Carburetor",
     "onHand": 6,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "MT7208-79",
@@ -3191,16 +3219,16 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208-84",
     "description": "Intake pipe bushing",
-    "onHand": 4,
+    "onHand": 3,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT7208-85",
     "description": "Intake elbow",
-    "onHand": 25,
+    "onHand": 20,
     "incoming": 0,
-    "allocated": 1
+    "allocated": 2
   },
   {
     "sku": "MT7208-86",
@@ -3303,21 +3331,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7208-FTASSY",
     "description": "Fuel Tank Ass'y MT7208",
-    "onHand": 1,
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT7208-PS",
     "description": "MT7208 Pull Start Assembly",
-    "onHand": 198,
+    "onHand": 197,
     "incoming": 0,
-    "allocated": 1
+    "allocated": 0
   },
   {
     "sku": "MT7400",
     "description": "Safety Bar - 400 Series GeoRipperT/A",
-    "onHand": 311,
+    "onHand": 298,
     "incoming": 0,
     "allocated": 0
   },
@@ -3331,7 +3359,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7500",
     "description": "Safety Bar - 500 Series GeoRipperT/A",
-    "onHand": 140,
+    "onHand": 95,
     "incoming": 0,
     "allocated": 0
   },
@@ -3345,7 +3373,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT7700",
     "description": "Safety Bar - 700 Series GeoRipperT/A",
-    "onHand": 89,
+    "onHand": 75,
     "incoming": 0,
     "allocated": 0
   },
@@ -3359,28 +3387,28 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT8000",
     "description": "GeoRipper Dirt/Mud Deflector Kit",
-    "onHand": 6,
+    "onHand": 3,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT8001",
     "description": "Dirt Deflector",
-    "onHand": 412,
+    "onHand": 343,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT8002",
     "description": "Mud Flap A",
-    "onHand": 1151,
+    "onHand": 1082,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT8003",
     "description": "Mud Flap B",
-    "onHand": 1005,
+    "onHand": 936,
     "incoming": 0,
     "allocated": 0
   },
@@ -3394,23 +3422,23 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT9001",
     "description": "Minitrencher Drive Sprocket for GeoRipper and GeoRipper(R)T/A",
-    "onHand": 9,
+    "onHand": 898,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 701
   },
   {
     "sku": "MT9002",
     "description": "Drive Axle for all GeoRipperT/A",
-    "onHand": 106,
+    "onHand": 531,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 300
   },
   {
     "sku": "MT9003",
     "description": "Labyrinth for all GeoRipperT/A",
-    "onHand": 203,
+    "onHand": 627,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 500
   },
   {
     "sku": "MT9081",
@@ -3429,49 +3457,49 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT95015B",
     "description": "Blank Chain Box",
-    "onHand": 324,
+    "onHand": 305,
     "incoming": 0,
-    "allocated": 4
+    "allocated": 2
   },
   {
     "sku": "MT95016A",
     "description": "Box - Bar 500",
-    "onHand": 719,
+    "onHand": 673,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT95016B",
     "description": "Box - Bar 700",
-    "onHand": 252,
+    "onHand": 234,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT95192",
     "description": "Box - TASPACER",
-    "onHand": 38,
+    "onHand": 32,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT95193",
     "description": "Box - EZ100",
-    "onHand": 102,
+    "onHand": 66,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT95195",
     "description": "Box - TA500",
-    "onHand": 256,
+    "onHand": 254,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MT95196",
     "description": "Box - TA700EZ",
-    "onHand": 219,
+    "onHand": 216,
     "incoming": 0,
     "allocated": 0
   },
@@ -3485,9 +3513,9 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MT9601",
     "description": "Minitrencher Drive Sprocket for 6 Series Trencher",
-    "onHand": 1657,
+    "onHand": 1648,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "MT9990L",
@@ -3520,7 +3548,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MTB31-00",
     "description": "Belt for Adapted Milwaukee MX314",
-    "onHand": 1002,
+    "onHand": 1000,
     "incoming": 0,
     "allocated": 0
   },
@@ -3534,42 +3562,42 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MTB45-76",
     "description": "Belt for Makita EK7651H & Stihl TS420/TS500i",
-    "onHand": 120,
+    "onHand": 117,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MTB61-00",
     "description": "Belt for Makita EK6101",
-    "onHand": 101,
+    "onHand": 93,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MTB72-00",
     "description": "Belt for 'The GeoRipper'",
-    "onHand": 1645,
+    "onHand": 1507,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MTB77-00",
     "description": "Belt for 'The GeoRipper', Husqvarna K770 & Echo CSG-7410",
-    "onHand": 547,
+    "onHand": 542,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MTB81-00",
     "description": "Belt for Makita EK8100",
-    "onHand": 216,
+    "onHand": 214,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MTB97-00",
     "description": "Belt for Husqvarna K970",
-    "onHand": 311,
+    "onHand": 305,
     "incoming": 0,
     "allocated": 0
   },
@@ -3604,23 +3632,23 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MTRIP700",
     "description": "GeoRipper(R) 27-Inch R.I.P. Kit",
-    "onHand": 0,
+    "onHand": 5,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 5
   },
   {
     "sku": "MTSMK16",
     "description": "GeoRipper 16-Inch Size Matters Trencher Conversion Kit",
-    "onHand": 0,
+    "onHand": -1,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MTSMK20",
     "description": "GeoRipper 20-Inch Size Matters Trencher Conversion Kit",
-    "onHand": 1,
+    "onHand": 0,
     "incoming": 0,
-    "allocated": 1
+    "allocated": 0
   },
   {
     "sku": "MTSMK27",
@@ -3632,35 +3660,35 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "MTSPWRENCH",
     "description": "Spark Plug Wrench",
-    "onHand": 246,
+    "onHand": 245,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MX1000",
     "description": "GeoRipper T/A Casting for Milwaukee MX314",
-    "onHand": 491,
+    "onHand": 490,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MX1001",
     "description": "Large Pulley - MX",
-    "onHand": 895,
+    "onHand": 893,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MX1002",
     "description": "Bushing - MX",
-    "onHand": 449,
+    "onHand": 448,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "MX1003",
     "description": "Small Pulley - MX",
-    "onHand": 449,
+    "onHand": 448,
     "incoming": 0,
     "allocated": 0
   },
@@ -3681,21 +3709,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "S1000",
     "description": "Stihl T/A Casting",
-    "onHand": 242,
+    "onHand": 239,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "S1001",
     "description": "Pulley for Stihl TS420/TS500i GeoRipperT/A",
-    "onHand": 430,
+    "onHand": 426,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB-LIT-OM",
     "description": "SiBore Owner's Manual",
-    "onHand": 2252,
+    "onHand": 2250,
     "incoming": 0,
     "allocated": 0
   },
@@ -3807,7 +3835,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB0112",
     "description": "SiBore Drill 3/16\" x 3/16\" x 12\" Shear Key",
-    "onHand": 131.13,
+    "onHand": 130.13,
     "incoming": 0,
     "allocated": 0
   },
@@ -3870,14 +3898,14 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB0250",
     "description": "SiBore Drill - Lower Unit",
-    "onHand": 324,
+    "onHand": 322,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB0300",
     "description": "SiBore Motor Mount",
-    "onHand": 362,
+    "onHand": 360,
     "incoming": 0,
     "allocated": 0
   },
@@ -3898,21 +3926,49 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB1000",
     "description": "SiBore Drill - 1\" Bore Head",
-    "onHand": 450,
+    "onHand": 446,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
+    "sku": "SB115",
+    "description": "SiBore Drill - SB115 Gas Powered 1\" MicroBore",
+    "onHand": 0,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
+    "sku": "SB115e",
+    "description": "SiBore Drill - SB115e Battery Powered 1\" MicroBore",
+    "onHand": 0,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
+    "sku": "SB116",
+    "description": "SiBore Drill - SB116 Gas Powered w/ 2\" and 4\" Auger",
+    "onHand": 0,
+    "incoming": 0,
+    "allocated": 0
+  },
+  {
+    "sku": "SB116e",
+    "description": "SiBore Drill - SB116e Battery Powered w/ 2\" and 4\" Auger",
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB121",
     "description": "SiBore Drill - 7/16\" Combo Wrench",
-    "onHand": 138,
+    "onHand": 137,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB122",
     "description": "SiBore Drill - 9/16\" Combo Wrench",
-    "onHand": 1150,
+    "onHand": 1146,
     "incoming": 0,
     "allocated": 0
   },
@@ -3926,35 +3982,35 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB1250",
     "description": "SiBore Drill - MicroBore Coupler Nut",
-    "onHand": 919,
+    "onHand": 903,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB1280",
     "description": "M12-1.75 x 80mm Grade 10.9 Clear Zinc Bolt",
-    "onHand": 118,
+    "onHand": 116,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB1425",
     "description": "1/4\"-20 x 2.5\" Pan Head Screw",
-    "onHand": 212,
+    "onHand": 208,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB1500",
     "description": "SiBore Drill - Swivel Cable Puller",
-    "onHand": 329,
+    "onHand": 327,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB2000",
     "description": "SiBore Drill - 2\" Auger Bit",
-    "onHand": 39,
+    "onHand": 37,
     "incoming": 0,
     "allocated": 0
   },
@@ -3996,7 +4052,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB215e",
     "description": "SiBore Drill - SB215e Battery Powered 1\" MicroBore",
-    "onHand": 1,
+    "onHand": 0,
     "incoming": 0,
     "allocated": 0
   },
@@ -4010,7 +4066,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB216",
     "description": "SiBore Drill - SB216 Gas Powered w/ 2\" and 4\" Auger",
-    "onHand": 4,
+    "onHand": 2,
     "incoming": 0,
     "allocated": 0
   },
@@ -4031,9 +4087,9 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB242SBD",
     "description": "SiBore Drill - General Epic 242SBD Auger",
-    "onHand": 28,
+    "onHand": 20,
     "incoming": 0,
-    "allocated": 3
+    "allocated": 0
   },
   {
     "sku": "SB3000",
@@ -4045,7 +4101,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB3200",
     "description": "SiBore Drill - 32\" Extension",
-    "onHand": 25,
+    "onHand": 19,
     "incoming": 0,
     "allocated": 0
   },
@@ -4066,42 +4122,42 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB3601",
     "description": "SiBore Drill MicroBore Drill Rod",
-    "onHand": 25,
+    "onHand": 9,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB38010",
     "description": "3/8\"-16 x 1\" Grade 8 YellowZinc Bolt",
-    "onHand": 97,
+    "onHand": 95,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB3803",
     "description": "3/8\"-16 Nylock Nut",
-    "onHand": 571,
+    "onHand": 565,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB3807",
     "description": "3/8\" split lock washer GR8 yellow zinc",
-    "onHand": 174,
+    "onHand": 172,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB3820",
     "description": "3/8\"-16 x 2\" Grade 8 YellowZinc Bolt",
-    "onHand": 242,
+    "onHand": 239,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB3822",
     "description": "3/8\"-16 x 2.25\" Grade 8 YellowZinc Bolt",
-    "onHand": 145,
+    "onHand": 141,
     "incoming": 0,
     "allocated": 0
   },
@@ -4115,30 +4171,30 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB4000",
     "description": "SiBore Drill - 4\" Auger Bit",
-    "onHand": 38,
+    "onHand": 36,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SB431",
     "description": "SiBore Drill - SB431 Gas Powered 1\" MicroBore / 2\" & 4\" Auger Combo",
-    "onHand": 3,
+    "onHand": -2,
     "incoming": 0,
-    "allocated": 3
+    "allocated": 0
   },
   {
     "sku": "SB431-AB",
     "description": "SiBore Drill SB431 Complete Accessory Bag",
-    "onHand": 2,
+    "onHand": 0,
     "incoming": 0,
-    "allocated": 2
+    "allocated": 0
   },
   {
     "sku": "SB431e",
     "description": "SiBore Drill - SB431e Battery Powered 1\" MicroBore / 2\" & 4\" Auger Combo",
     "onHand": 1,
     "incoming": 0,
-    "allocated": 0
+    "allocated": 1
   },
   {
     "sku": "SB431e-NM",
@@ -4164,7 +4220,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB9000",
     "description": "SiBore Drill - MicroBore Adapter",
-    "onHand": 5,
+    "onHand": 3,
     "incoming": 0,
     "allocated": 0
   },
@@ -4178,7 +4234,7 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SB9100",
     "description": "SiBore Drill - Makita Adapter Plate",
-    "onHand": 12,
+    "onHand": 11,
     "incoming": 0,
     "allocated": 0
   },
@@ -4213,21 +4269,21 @@ const inventoryItems: InventoryItem[] = [
   {
     "sku": "SBACCBAG",
     "description": "SiBore Accessory Bag",
-    "onHand": 444,
+    "onHand": 441,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SBBOX1",
     "description": "SiBore Drill - Shipping Box",
-    "onHand": 66,
+    "onHand": 64,
     "incoming": 0,
     "allocated": 0
   },
   {
     "sku": "SBBOX2",
     "description": "SiBore Drill - Tray",
-    "onHand": 98,
+    "onHand": 96,
     "incoming": 0,
     "allocated": 0
   },

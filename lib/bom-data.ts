@@ -314,6 +314,51 @@ const bomLines: BomLine[] = [
     "qtyPer": 1
   },
   {
+    "parentSku": "GR416EZ",
+    "childSku": "BX-4",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "BX-5",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "BX-6",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "EZ100",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "GR457",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "GRS11",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "MT3400",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "MT4400",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "GR416EZ",
+    "childSku": "MT7400",
+    "qtyPer": 1
+  },
+  {
     "parentSku": "GR457",
     "childSku": "GR-1000",
     "qtyPer": 1
@@ -8909,6 +8954,411 @@ const bomLines: BomLine[] = [
     "qtyPer": 0.116667
   },
   {
+    "parentSku": "SB115",
+    "childSku": "GR-LIT-WP",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "MT0004",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "MT0099",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB-LIT-OM",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB0250",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB0300",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB1000",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB121",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB122",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB1425",
+    "qtyPer": 3
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB1500",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB3600",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB38010",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB3807",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SB9000",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SBACCBAG",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SBBOX1",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115",
+    "childSku": "SBBOX2",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "141S89-4",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "327C19-5",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "GR-LIT-WP",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "GRKM61.8",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "MT0004",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "MT0099",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "MT0840",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "MT0865",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB-LIT-OM",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB0250",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB1000",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB122",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB123",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB1280",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB1500",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB3600",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB3803",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB3820",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB9000",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SB9100",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SBACCBAG",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SBBOX1",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB115e",
+    "childSku": "SBBOX2",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "GR-LIT-WP",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "MT0004",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "MT0099",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB-LIT-OM",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB0250",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB0300",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB121",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB122",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB1425",
+    "qtyPer": 3
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB2000",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB3200",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB38010",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB3803",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB3807",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SB3822",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SBACCBAG",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SBBOX1",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116",
+    "childSku": "SBBOX2",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "141S89-4",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "327C19-5",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "GR-LIT-WP",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "GRKM61.8",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "MT0004",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "MT0099",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "MT0840",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "MT0865",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB-LIT-OM",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB0250",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB122",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB123",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB1280",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB2000",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB3200",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB3803",
+    "qtyPer": 7
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB3820",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB3822",
+    "qtyPer": 2
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SB9100",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SBACCBAG",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SBBOX1",
+    "qtyPer": 1
+  },
+  {
+    "parentSku": "SB116e",
+    "childSku": "SBBOX2",
+    "qtyPer": 1
+  },
+  {
     "parentSku": "SB215",
     "childSku": "GR-LIT-WP",
     "qtyPer": 1
@@ -9006,11 +9456,6 @@ const bomLines: BomLine[] = [
   {
     "parentSku": "SB215e",
     "childSku": "327C19-5",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB215e",
-    "childSku": "GGD01M1",
     "qtyPer": 1
   },
   {
@@ -9291,11 +9736,6 @@ const bomLines: BomLine[] = [
   {
     "parentSku": "SB216e",
     "childSku": "327C19-5",
-    "qtyPer": 1
-  },
-  {
-    "parentSku": "SB216e",
-    "childSku": "GGD01M1",
     "qtyPer": 1
   },
   {

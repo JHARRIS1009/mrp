@@ -1,0 +1,11 @@
+{
+  "demandHash": "40a629b363a20af96e65ab93ff1123a05c0b5a9be7c461d60d9452ef48c1cb1e",
+  "lastDemandCheck": "2026-06-26T22:57:51.462Z",
+  "purchaseOrderHash": "59866281da445cddd837913798b3cc759ed432b156991d904fc564d6a39b7c2c",
+  "lastPurchaseOrderCheck": "2026-06-26T22:57:51.462Z",
+  "inventorySkuHash": "3f0a53156a2c9eb280646b98d23bf57351a76c37ba504c6360fc9fd7580118af",
+  "lastInventoryCheck": "2026-06-26T22:57:51.462Z",
+  "compositeItemHash": "07263effd90e0cf1359bc08862137465643b0561351c192addee48953a05da87",
+  "lastBomCheck": "2026-06-26T22:57:51.462Z",
+  "inventoryQuantityHash": "c6877964d0dd0ea60b71cd57febcc22f96df22864d13f72439db481ed7ea17ba"
+}

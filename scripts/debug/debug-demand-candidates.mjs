@@ -2,9 +2,9 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
 import { writeFileSync } from "node:fs";
-import { getInventoryItems } from "../lib/inventory-data.ts";
-import { getSalesOrderDetail, listAllSalesOrderHeaders } from "../lib/zoho/sales-orders.ts";
-import { isCandidateDemandOrder } from "../lib/mrp/demand-from-zoho.ts";
+import { getInventoryItems } from "../../lib/inventory-data.ts";
+import { getSalesOrderDetail, listAllSalesOrderHeaders } from "../../lib/zoho/sales-orders.ts";
+import { isCandidateDemandOrder } from "../../lib/mrp/demand-from-zoho.ts";
 
 const inventoryItems = await getInventoryItems();
 const inventoryTrackedSkus = new Set(inventoryItems.map((item) => item.sku));

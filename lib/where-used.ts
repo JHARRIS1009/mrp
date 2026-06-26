@@ -1,4 +1,4 @@
-import { getBomLines } from "@/lib/bom-data";
+import { getBomLines } from "@/lib/data/bom";
 
 export type WhereUsedResult = {
   parentSku: string;

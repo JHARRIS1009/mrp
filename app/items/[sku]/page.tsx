@@ -1,9 +1,9 @@
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
-import { getInventoryItems } from "@/lib/inventory-data";
-import { getDemandItems } from "@/lib/demand-data";
+import { getInventoryItems } from "@/lib/data/inventory";
+import { getDemandItems } from "@/lib/data/demand";
 import { calculateShortageTrace, calculateShortages } from "@/lib/mrp";
-import { getPurchaseOrderLinesBySku } from "@/lib/purchase-orders-data";
+import { getPurchaseOrderLinesBySku } from "@/lib/data/purchase-orders";
 import { calculateProjectedInventory } from "@/lib/projected-inventory";
 import { formatDate } from "@/lib/date-utils";
 

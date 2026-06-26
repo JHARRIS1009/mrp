@@ -1,5 +1,3 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
 import crypto from "node:crypto";
 
 import { listAllSalesOrderHeaders } from "@/lib/zoho/sales-orders";
@@ -10,38 +8,23 @@ import {
 } from "@/lib/zoho/items";
 import { listAllCompositeItemHeaders } from "@/lib/zoho/composite-items";
 
-type SyncState = {
-  lastDemandCheck?: string;
-  lastPurchaseOrderCheck?: string;
-  lastInventoryCheck?: string;
-  lastBomCheck?: string;
+import { readSyncState, writeSyncState } from "@/lib/sync/state";
 
-  demandHash?: string;
-  purchaseOrderHash?: string;
-  inventorySkuHash?: string;
-  compositeItemHash?: string;
+import { generateDemandData } from "@/lib/generators/generate-demand-data";
+import { generatePurchaseOrdersData } from "@/lib/generators/generate-purchase-orders-data";
+import { generateInventoryData } from "@/lib/generators/generate-inventory-data";
+import { generateBomData } from "@/lib/generators/generate-bom-data";
+import type { InventoryItem } from "@/lib/data/inventory";
+
+const CHECK_INTERVAL_MS = 5 * 60 * 1000;
+
+export type FreshDataResult = {
+  demandChanged: boolean;
+  purchaseOrdersChanged: boolean;
+  inventorySkuListChanged: boolean;
+  inventoryQuantityChanged: boolean;
+  compositeItemsChanged: boolean;
 };
-
-const SYNC_STATE_PATH = "data/sync-state.json";
-
-const CHECK_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
-
-function ensureDataDir() {
-  mkdirSync(dirname(SYNC_STATE_PATH), { recursive: true });
-}
-
-function readSyncState(): SyncState {
-  if (!existsSync(SYNC_STATE_PATH)) {
-    return {};
-  }
-
-  return JSON.parse(readFileSync(SYNC_STATE_PATH, "utf8"));
-}
-
-function writeSyncState(state: SyncState) {
-  ensureDataDir();
-  writeFileSync(SYNC_STATE_PATH, JSON.stringify(state, null, 2));
-}
 
 function hashData(value: unknown) {
   return crypto
@@ -60,27 +43,53 @@ function isStale(lastCheck?: string) {
   return Date.now() - lastTime > CHECK_INTERVAL_MS;
 }
 
-export type FreshDataResult = {
-  demandChanged: boolean;
-  purchaseOrdersChanged: boolean;
-  inventorySkuListChanged: boolean;
-  compositeItemsChanged: boolean;
-};
+function inventorySkuSnapshot(items: any[]) {
+  return items
+    .map((item) => String(item.sku ?? "").trim())
+    .filter(Boolean)
+    .sort();
+}
+
+function inventoryQuantitySnapshot(items: any[]) {
+  return items
+    .map((item) => ({
+      sku: String(item.sku ?? "").trim(),
+      status: item.status,
+      trackInventory: item.track_inventory,
+      stockOnHand: Number(item.stock_on_hand ?? 0),
+      availableStock: Number(item.available_stock ?? 0),
+      actualAvailableStock: Number(item.actual_available_stock ?? 0),
+      committedStock: Number(item.committed_stock ?? 0),
+      actualCommittedStock: Number(item.actual_committed_stock ?? 0),
+    }))
+    .filter((item) => item.sku)
+    .sort((a, b) => a.sku.localeCompare(b.sku));
+}
 
 export async function ensureFreshData(): Promise<FreshDataResult> {
-  const state = readSyncState();
+  console.log("\n========================================");
+  console.log("[SYNC] Starting freshness check");
+  console.log("========================================");
+
+  const state = await readSyncState();
 
   let demandChanged = false;
   let purchaseOrdersChanged = false;
   let inventorySkuListChanged = false;
+  let inventoryQuantityChanged = false;
   let compositeItemsChanged = false;
+  let refreshedInventoryItems: InventoryItem[] | undefined;
 
   const now = new Date().toISOString();
 
   if (isStale(state.lastDemandCheck)) {
+    console.log("[SYNC] Checking Demand...");
+
     const demandHeaders = await listAllSalesOrderHeaders({
       dateAfter: process.env.ZOHO_DEMAND_DATE_AFTER || "2025-01-01",
     });
+
+    console.log(`[SYNC] Demand headers fetched: ${demandHeaders.length}`);
 
     const demandHash = hashData(
       demandHeaders.map((order) => ({
@@ -100,12 +109,20 @@ export async function ensureFreshData(): Promise<FreshDataResult> {
 
     demandChanged = demandHash !== state.demandHash;
 
+    console.log(`[SYNC] Demand changed: ${demandChanged}`);
+
     state.demandHash = demandHash;
     state.lastDemandCheck = now;
+  } else {
+    console.log("[SYNC] Demand check skipped (fresh)");
   }
 
   if (isStale(state.lastPurchaseOrderCheck)) {
+    console.log("[SYNC] Checking Purchase Orders...");
+
     const poHeaders = await listAllPurchaseOrderHeaders();
+
+    console.log(`[SYNC] Purchase Order headers fetched: ${poHeaders.length}`);
 
     const purchaseOrderHash = hashData(
       poHeaders.map((po) => ({
@@ -126,8 +143,12 @@ export async function ensureFreshData(): Promise<FreshDataResult> {
 
     purchaseOrdersChanged = purchaseOrderHash !== state.purchaseOrderHash;
 
+    console.log(`[SYNC] Purchase Orders changed: ${purchaseOrdersChanged}`);
+
     state.purchaseOrderHash = purchaseOrderHash;
     state.lastPurchaseOrderCheck = now;
+  } else {
+    console.log("[SYNC] Purchase Order check skipped (fresh)");
   }
 
   if (
@@ -135,24 +156,52 @@ export async function ensureFreshData(): Promise<FreshDataResult> {
     purchaseOrdersChanged ||
     isStale(state.lastInventoryCheck)
   ) {
+    console.log("[SYNC] Checking Inventory...");
+
     const regularItems = await listAllItems();
     const compositeItems = await listAllCompositeItemsAsInventoryItems();
 
+    const allInventoryItems = [...regularItems, ...compositeItems];
+
+    console.log(`[SYNC] Regular Items: ${regularItems.length}`);
+    console.log(`[SYNC] Composite Items: ${compositeItems.length}`);
+    console.log(`[SYNC] Total Inventory Records: ${allInventoryItems.length}`);
+
     const inventorySkuHash = hashData(
-      [...regularItems, ...compositeItems]
-        .map((item) => String(item.sku ?? "").trim())
-        .filter(Boolean)
-        .sort()
+      inventorySkuSnapshot(allInventoryItems)
+    );
+
+    const inventoryQuantityHash = hashData(
+      inventoryQuantitySnapshot(allInventoryItems)
     );
 
     inventorySkuListChanged = inventorySkuHash !== state.inventorySkuHash;
+    inventoryQuantityChanged =
+      inventoryQuantityHash !== state.inventoryQuantityHash;
+
+    console.log(
+      `[SYNC] Inventory SKU list changed: ${inventorySkuListChanged}`
+    );
+
+    console.log(
+      `[SYNC] Inventory quantities changed: ${inventoryQuantityChanged}`
+    );
 
     state.inventorySkuHash = inventorySkuHash;
+    state.inventoryQuantityHash = inventoryQuantityHash;
     state.lastInventoryCheck = now;
+  } else {
+    console.log("[SYNC] Inventory check skipped");
   }
 
   if (inventorySkuListChanged || isStale(state.lastBomCheck)) {
+    console.log("[SYNC] Checking Composite Items...");
+
     const compositeHeaders = await listAllCompositeItemHeaders();
+
+    console.log(
+      `[SYNC] Composite Item headers fetched: ${compositeHeaders.length}`
+    );
 
     const compositeItemHash = hashData(
       compositeHeaders
@@ -166,16 +215,56 @@ export async function ensureFreshData(): Promise<FreshDataResult> {
 
     compositeItemsChanged = compositeItemHash !== state.compositeItemHash;
 
+    console.log(`[SYNC] Composite Items changed: ${compositeItemsChanged}`);
+
     state.compositeItemHash = compositeItemHash;
     state.lastBomCheck = now;
+  } else {
+    console.log("[SYNC] Composite Item check skipped");
   }
 
-  writeSyncState(state);
+  if (
+    demandChanged ||
+    purchaseOrdersChanged ||
+    inventorySkuListChanged ||
+    inventoryQuantityChanged
+  ) {
+    console.log("[SYNC] Inventory changed. Regenerating inventory data...");
+    const inventoryResult = await generateInventoryData();
+    refreshedInventoryItems = inventoryResult.inventory;
+  }
 
-  return {
+  if (demandChanged) {
+    console.log("[SYNC] Demand changed. Regenerating demand data...");
+    await generateDemandData({ inventoryItems: refreshedInventoryItems });
+  }
+
+  if (purchaseOrdersChanged) {
+    console.log(
+      "[SYNC] Purchase Orders changed. Regenerating purchase order data..."
+    );
+    await generatePurchaseOrdersData({ inventoryItems: refreshedInventoryItems });
+  }
+
+  if (inventorySkuListChanged || compositeItemsChanged) {
+    console.log("[SYNC] Composite/BOM changed. Regenerating BOM data...");
+    await generateBomData();
+  }
+
+  await writeSyncState(state);
+
+  const result = {
     demandChanged,
     purchaseOrdersChanged,
     inventorySkuListChanged,
+    inventoryQuantityChanged,
     compositeItemsChanged,
   };
+
+  console.log("----------------------------------------");
+  console.log("[SYNC] Freshness check complete");
+  console.log(JSON.stringify(result, null, 2));
+  console.log("========================================\n");
+
+  return result;
 }

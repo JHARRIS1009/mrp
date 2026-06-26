@@ -1,4 +1,4 @@
-import { getDemandItems } from "@/lib/demand-data";
+import { getDemandItems } from "@/lib/data/demand";
 import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 

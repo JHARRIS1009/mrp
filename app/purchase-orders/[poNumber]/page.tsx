@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPurchaseOrderLinesByPoNumber } from "@/lib/purchase-orders-data";
+import { getPurchaseOrderLinesByPoNumber } from "@/lib/data/purchase-orders";
 import Link from "next/link";
 import { formatDate } from "@/lib/date-utils";
 import BackButton from "@/components/BackButton";

@@ -1,4 +1,4 @@
-import { getBomLines } from "@/lib/bom-data";
+import { getBomLines } from "@/lib/data/bom";
 import Link from "next/link";
 
 export default async function BomPage() {

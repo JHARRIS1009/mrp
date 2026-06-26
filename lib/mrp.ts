@@ -1,7 +1,7 @@
-import { getBomLines } from "@/lib/bom-data";
-import { getDemandItems } from "@/lib/demand-data";
-import { getInventoryItems } from "@/lib/inventory-data";
-import { getPurchaseOrderLines } from "@/lib/purchase-orders-data";
+import { getBomLines } from "@/lib/data/bom";
+import { getDemandItems } from "@/lib/data/demand";
+import { getInventoryItems } from "@/lib/data/inventory";
+import { getPurchaseOrderLines } from "@/lib/data/purchase-orders";
 
 export type RequirementTrace = {
     componentSku: string;

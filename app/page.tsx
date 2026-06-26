@@ -1,4 +1,7 @@
+import { ensureDataBeforePage } from "@/lib/sync/ensure-data-before-page";
 import Link from "next/link";
+
+export const dynamic = "force-dynamic";
 
 const links = [
   { href: "/inventory", label: "Inventory" },
@@ -7,7 +10,11 @@ const links = [
   { href: "/demand", label: "Demand" },
 ];
 
+
+
 export default function HomePage() {
+  ensureDataBeforePage();
+  
   return (
     <main className="min-h-screen bg-slate-950 p-8 text-white">
       <h1 className="text-3xl font-bold">MiniTrencher MRP</h1>

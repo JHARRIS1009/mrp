@@ -9,7 +9,7 @@ console.log({
   dc: process.env.ZOHO_DC || "com",
 });
 
-import { getZohoAccessToken } from "../lib/zoho/auth.ts";
+import { getZohoAccessToken } from "../../lib/zoho/auth.ts";
 
 const token = await getZohoAccessToken();
 
