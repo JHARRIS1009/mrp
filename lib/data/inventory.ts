@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase/server";
+import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 export type InventoryItem = {
   sku: string;
@@ -35,7 +35,7 @@ function toInventoryItem(row: InventoryItemRow): InventoryItem {
 }
 
 export async function getInventoryItems(): Promise<InventoryItem[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("inventory_items")
     .select(inventoryItemSelect)
     .order("sku", { ascending: true });
@@ -50,7 +50,7 @@ export async function getInventoryItems(): Promise<InventoryItem[]> {
 export async function getInventoryItemBySku(
   sku: string
 ): Promise<InventoryItem | undefined> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("inventory_items")
     .select(inventoryItemSelect)
     .eq("sku", sku)
@@ -66,7 +66,7 @@ export async function getInventoryItemBySku(
 export async function replaceInventoryItems(
   inventoryItems: InventoryItem[]
 ): Promise<void> {
-  const { error: deleteError } = await supabaseAdmin
+  const { error: deleteError } = await getSupabaseAdmin()
     .from("inventory_items")
     .delete()
     .not("sku", "is", null);
@@ -86,7 +86,7 @@ export async function replaceInventoryItems(
 
   for (let index = 0; index < rows.length; index += 1000) {
     const chunk = rows.slice(index, index + 1000);
-    const { error: insertError } = await supabaseAdmin
+    const { error: insertError } = await getSupabaseAdmin()
       .from("inventory_items")
       .insert(chunk);
 

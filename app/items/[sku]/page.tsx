@@ -7,6 +7,8 @@ import { getPurchaseOrderLinesBySku } from "@/lib/data/purchase-orders";
 import { calculateProjectedInventory } from "@/lib/projected-inventory";
 import { formatDate } from "@/lib/date-utils";
 
+export const dynamic = "force-dynamic";
+
 export default async function ItemDetailPage({
   params,
 }: {

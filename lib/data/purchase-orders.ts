@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase/server";
+import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 export type PurchaseOrderLine = {
   poNumber: string;
@@ -39,7 +39,7 @@ function toPurchaseOrderLine(row: PurchaseOrderLineRow): PurchaseOrderLine {
 }
 
 export async function getPurchaseOrderLines(): Promise<PurchaseOrderLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("purchase_order_lines")
     .select(purchaseOrderLineSelect)
     .order("id", { ascending: true });
@@ -54,7 +54,7 @@ export async function getPurchaseOrderLines(): Promise<PurchaseOrderLine[]> {
 export async function getPurchaseOrderLinesBySku(
   sku: string
 ): Promise<PurchaseOrderLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("purchase_order_lines")
     .select(purchaseOrderLineSelect)
     .eq("sku", sku)
@@ -72,7 +72,7 @@ export async function getPurchaseOrderLinesBySku(
 export async function getPurchaseOrderLinesByPoNumber(
   poNumber: string
 ): Promise<PurchaseOrderLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("purchase_order_lines")
     .select(purchaseOrderLineSelect)
     .eq("po_number", poNumber)
@@ -90,7 +90,7 @@ export async function getPurchaseOrderLinesByPoNumber(
 export async function replacePurchaseOrderLines(
   purchaseOrderLines: PurchaseOrderLine[]
 ): Promise<void> {
-  const { error: deleteError } = await supabaseAdmin
+  const { error: deleteError } = await getSupabaseAdmin()
     .from("purchase_order_lines")
     .delete()
     .not("id", "is", null);
@@ -113,7 +113,7 @@ export async function replacePurchaseOrderLines(
 
   for (let index = 0; index < rows.length; index += 1000) {
     const chunk = rows.slice(index, index + 1000);
-    const { error: insertError } = await supabaseAdmin
+    const { error: insertError } = await getSupabaseAdmin()
       .from("purchase_order_lines")
       .insert(chunk);
 

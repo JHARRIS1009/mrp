@@ -4,6 +4,8 @@ import { getPurchaseOrderLinesBySku } from "@/lib/data/purchase-orders";
 import { formatDate } from "@/lib/date-utils";
 import BackButton from "@/components/BackButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function ShortageDetailPage({
   params,
 }: {

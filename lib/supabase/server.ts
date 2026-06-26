@@ -1,4 +1,6 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+
+let supabaseAdmin: SupabaseClient | undefined;
 
 function requireEnv(name: string) {
   const value = process.env[name];
@@ -10,13 +12,17 @@ function requireEnv(name: string) {
   return value;
 }
 
-export const supabaseAdmin = createClient(
-  requireEnv("SUPABASE_URL"),
-  requireEnv("SUPABASE_SERVICE_ROLE_KEY"),
-  {
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-  }
-);
+export function getSupabaseAdmin() {
+  supabaseAdmin ??= createClient(
+    requireEnv("SUPABASE_URL"),
+    requireEnv("SUPABASE_SERVICE_ROLE_KEY"),
+    {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    }
+  );
+
+  return supabaseAdmin;
+}

@@ -1,6 +1,8 @@
 import { getBomLines } from "@/lib/data/bom";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function BomPage() {
   const bomLines = await getBomLines();
 

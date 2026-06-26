@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase/server";
+import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 export type BomLine = {
   parentSku: string;
@@ -27,7 +27,7 @@ function toBomLine(row: BomLineRow): BomLine {
 }
 
 export async function getBomLines(): Promise<BomLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("bom_lines")
     .select(bomLineSelect)
     .order("parent_sku", { ascending: true })
@@ -43,7 +43,7 @@ export async function getBomLines(): Promise<BomLine[]> {
 export async function getBomLinesByParentSku(
   parentSku: string
 ): Promise<BomLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("bom_lines")
     .select(bomLineSelect)
     .eq("parent_sku", parentSku)
@@ -59,7 +59,7 @@ export async function getBomLinesByParentSku(
 export async function getBomLinesByChildSku(
   childSku: string
 ): Promise<BomLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("bom_lines")
     .select(bomLineSelect)
     .eq("child_sku", childSku)
@@ -73,7 +73,7 @@ export async function getBomLinesByChildSku(
 }
 
 export async function replaceBomLines(bomLines: BomLine[]): Promise<void> {
-  const { error: deleteError } = await supabaseAdmin
+  const { error: deleteError } = await getSupabaseAdmin()
     .from("bom_lines")
     .delete()
     .not("parent_sku", "is", null);
@@ -91,7 +91,7 @@ export async function replaceBomLines(bomLines: BomLine[]): Promise<void> {
 
   for (let index = 0; index < rows.length; index += 1000) {
     const chunk = rows.slice(index, index + 1000);
-    const { error: insertError } = await supabaseAdmin
+    const { error: insertError } = await getSupabaseAdmin()
       .from("bom_lines")
       .insert(chunk);
 

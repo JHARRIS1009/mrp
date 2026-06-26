@@ -2,6 +2,8 @@ import { getDemandItems } from "@/lib/data/demand";
 import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function DemandPage() {
   const demandItems = await getDemandItems();
 

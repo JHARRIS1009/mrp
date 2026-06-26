@@ -1,6 +1,8 @@
 import { calculateShortages } from "@/lib/mrp";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function ShortagesPage() {
   const shortages = await calculateShortages();
 

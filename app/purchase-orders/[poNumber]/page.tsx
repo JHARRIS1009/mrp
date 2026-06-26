@@ -4,6 +4,8 @@ import Link from "next/link";
 import { formatDate } from "@/lib/date-utils";
 import BackButton from "@/components/BackButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function PurchaseOrderDetailPage({
   params,
 }: {

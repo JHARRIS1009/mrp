@@ -3,6 +3,8 @@ import { getDemandItemsByOrderNumber } from "@/lib/data/demand";
 import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 function getAgeInfo(orderDate: string) {
   if (!orderDate) {
     return {

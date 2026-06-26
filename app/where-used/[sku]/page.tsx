@@ -2,6 +2,8 @@ import Link from "next/link";
 import { calculateRecursiveWhereUsed } from "@/lib/where-used";
 import BackButton from "@/components/BackButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function WhereUsedPage({
   params,
 }: {

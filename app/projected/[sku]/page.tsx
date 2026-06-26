@@ -4,6 +4,8 @@ import { getInventoryItems } from "@/lib/data/inventory";
 import { formatDate } from "@/lib/date-utils";
 import BackButton from "@/components/BackButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProjectedInventoryPage({
   params,
 }: {

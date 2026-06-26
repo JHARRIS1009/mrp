@@ -2,6 +2,8 @@ import { getPurchaseOrderLines } from "@/lib/data/purchase-orders";
 import { formatDate } from "@/lib/date-utils";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function PurchaseOrdersPage() {
   const purchaseOrders = await getPurchaseOrderLines();
 

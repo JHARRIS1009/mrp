@@ -2,6 +2,8 @@ import { getInventoryItems } from "@/lib/data/inventory";
 import NavBar from "@/components/NavBar";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function InventoryPage() {
     const inventoryItems = await getInventoryItems();
 

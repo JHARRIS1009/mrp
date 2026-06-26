@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase/server";
+import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 export type SyncState = {
   lastDemandCheck?: string;
@@ -14,7 +14,7 @@ export type SyncState = {
 };
 
 export async function readSyncState(): Promise<SyncState> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("sync_state")
     .select("key, value");
 
@@ -43,7 +43,7 @@ export async function writeSyncState(
     return;
   }
 
-  const { error } = await supabaseAdmin
+  const { error } = await getSupabaseAdmin()
     .from("sync_state")
     .upsert(rows, { onConflict: "key" });
 

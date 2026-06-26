@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase/server";
+import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 export type DemandLine = {
   orderNumber: string;
@@ -43,7 +43,7 @@ function toDemandLine(row: DemandLineRow): DemandLine {
 }
 
 export async function getDemandItems(): Promise<DemandLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("demand_lines")
     .select(demandLineSelect)
     .order("id", { ascending: true });
@@ -58,7 +58,7 @@ export async function getDemandItems(): Promise<DemandLine[]> {
 export async function getDemandItemsByOrderNumber(
   orderNumber: string
 ): Promise<DemandLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("demand_lines")
     .select(demandLineSelect)
     .eq("order_number", orderNumber)
@@ -74,7 +74,7 @@ export async function getDemandItemsByOrderNumber(
 }
 
 export async function getDemandItemsBySku(sku: string): Promise<DemandLine[]> {
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await getSupabaseAdmin()
     .from("demand_lines")
     .select(demandLineSelect)
     .eq("sku", sku)
@@ -90,7 +90,7 @@ export async function getDemandItemsBySku(sku: string): Promise<DemandLine[]> {
 export async function replaceDemandLines(
   demandLines: DemandLine[]
 ): Promise<void> {
-  const { error: deleteError } = await supabaseAdmin
+  const { error: deleteError } = await getSupabaseAdmin()
     .from("demand_lines")
     .delete()
     .not("id", "is", null);
@@ -112,7 +112,7 @@ export async function replaceDemandLines(
 
   for (let index = 0; index < rows.length; index += 1000) {
     const chunk = rows.slice(index, index + 1000);
-    const { error: insertError } = await supabaseAdmin
+    const { error: insertError } = await getSupabaseAdmin()
       .from("demand_lines")
       .insert(chunk);
 

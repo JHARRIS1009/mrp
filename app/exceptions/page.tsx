@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { calculateMrpExceptions } from "@/lib/mrp-exceptions";
 
+export const dynamic = "force-dynamic";
+
 export default async function ExceptionsPage() {
   const exceptions = await calculateMrpExceptions();
 

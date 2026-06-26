@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getBomLines } from "@/lib/data/bom";
 import BackButton from "@/components/BackButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function BomDetailPage({
   params,
 }: {

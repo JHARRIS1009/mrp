@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase/server";
+import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 type SyncRunStatus = "success" | "error";
 
@@ -13,7 +13,7 @@ export async function recordSyncRun({
   status: SyncRunStatus;
   message?: string;
 }): Promise<void> {
-  const { error } = await supabaseAdmin.from("sync_runs").insert({
+  const { error } = await getSupabaseAdmin().from("sync_runs").insert({
     sync_type: syncType,
     records,
     status,
